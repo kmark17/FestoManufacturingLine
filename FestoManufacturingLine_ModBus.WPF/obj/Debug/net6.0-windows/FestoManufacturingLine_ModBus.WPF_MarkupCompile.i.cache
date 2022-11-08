@@ -1,0 +1,20 @@
+﻿FestoManufacturingLine_ModBus.WPF
+1.0.0.0
+
+winexe
+C#
+.cs
+D:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\
+FestoManufacturingLine_ModBus.WPF
+none
+false
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+D:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\App.xaml
+14610788428
+
+34-1273998364
+263-960428926
+Controls\PLCConfiguration.xaml;MainWindow.xaml;StartUpWindow.xaml;Themes\HamburgerMenus\HamburgerMenuRippleStyle.xaml;Themes\HamburgerMenus\HamburgerMenuTemplate.xaml;Views\DistributingStationView.xaml;Views\FluidicMusclePressStationView.xaml;Views\HandlingStationView.xaml;Views\ManufacturingLineOverviewView.xaml;Views\PickAndPlaceStationView.xaml;Views\ProcessingStationView.xaml;Views\SettingsView.xaml;Views\SortingStationView.xaml;Views\TestingStationView.xaml;
+
+False
+

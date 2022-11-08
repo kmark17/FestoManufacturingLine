@@ -1,0 +1,164 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\FestoManufacturingLine_ModBus.WPF.csproj": {}
+  },
+  "projects": {
+    "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.Domain\\FestoManufacturingLine_ModBus.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.Domain\\FestoManufacturingLine_ModBus.Domain.csproj",
+        "projectName": "FestoManufacturingLine_ModBus.Domain",
+        "projectPath": "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.Domain\\FestoManufacturingLine_ModBus.Domain.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.110\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\FestoManufacturingLine_ModBus.WPF.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\FestoManufacturingLine_ModBus.WPF.csproj",
+        "projectName": "FestoManufacturingLine_ModBus.WPF",
+        "projectPath": "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\FestoManufacturingLine_ModBus.WPF.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {
+              "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.Domain\\FestoManufacturingLine_ModBus.Domain.csproj": {
+                "projectPath": "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.Domain\\FestoManufacturingLine_ModBus.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "CalcBinding": {
+              "target": "Package",
+              "version": "[2.5.2, )"
+            },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "MahApps.Metro": {
+              "target": "Package",
+              "version": "[2.4.9, )"
+            },
+            "MahApps.Metro.IconPacks": {
+              "target": "Package",
+              "version": "[4.11.0, )"
+            },
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[4.7.0-ci343, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "System.IO.Ports": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.110\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

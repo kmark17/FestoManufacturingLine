@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="StartUpWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DistributingStationView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\FluidicMusclePressStationView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\HandlingStationView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ManufacturingLineOverviewView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PickAndPlaceStationView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ProcessingStationView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SettingsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SortingStationView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\TestingStationView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Controls\PLCConfiguration.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StartUpWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\HamburgerMenus\HamburgerMenuRippleStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\HamburgerMenus\HamburgerMenuTemplate.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DistributingStationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\FluidicMusclePressStationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\HandlingStationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ManufacturingLineOverviewView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PickAndPlaceStationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ProcessingStationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SettingsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SortingStationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\TestingStationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
