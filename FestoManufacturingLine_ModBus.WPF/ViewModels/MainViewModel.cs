@@ -3,12 +3,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace FestoManufacturingLine_ModBus.WPF.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
+        
+        //private ModbusClient TestingStationModeBusClient { get; set; }
+        //private ModbusClient ProcessingStationModeBusClient { get; set; }
+        //private ModbusClient PickAndPlaceStationModeBusClient { get; set; }
+        //private ModbusClient HandlingStationModeBusClient { get; set; }
+        //private ModbusClient FluidicMusclePressStationModeBusClient { get; set; }
+        //private ModbusClient SortingStationModeBusClient { get; set; }
+
         public IViewModelFactory ViewModelFactory { get; }
         public ManufacturingLineOverviewViewModel? ManufacturingLineOverviewViewModel { get; }
         public DistributingStationViewModel? DistributingStationViewModel { get; }

@@ -16,6 +16,7 @@ namespace FestoManufacturingLine_ModBus.WPF.HostBuilders
             host.ConfigureServices(services =>
             {
                 services.AddSingleton<MainViewModel>();
+                services.AddSingleton<ModbusClientViewModel>();
                 services.AddSingleton<CreateViewModel<ManufacturingLineOverviewViewModel>>(services => () => CreateManufacturingLineOverviewViewModel(services));
                 services.AddSingleton<CreateViewModel<DistributingStationViewModel>>(services => () => CreateDistributingStationViewModel(services));
                 services.AddSingleton<CreateViewModel<TestingStationViewModel>>(services => () => CreateTestingStationViewModel(services));
@@ -37,18 +38,17 @@ namespace FestoManufacturingLine_ModBus.WPF.HostBuilders
 
         private static DistributingStationViewModel CreateDistributingStationViewModel(IServiceProvider services)
         {
-            return new DistributingStationViewModel();
-                //services.GetRequiredService<IAuthenticationService>(),
+            return new DistributingStationViewModel(services.GetRequiredService<ModbusClientViewModel>());
         }
 
         private static TestingStationViewModel CreateTestingStationViewModel(IServiceProvider services)
         {
-            return new TestingStationViewModel();
+            return new TestingStationViewModel(services.GetRequiredService<ModbusClientViewModel>());
         }
 
         private static ProcessingStationViewModel CreateProcessingStationViewModel(IServiceProvider services)
         {
-            return new ProcessingStationViewModel();
+            return new ProcessingStationViewModel(services.GetRequiredService<ModbusClientViewModel>());
         }
 
         private static PickAndPlaceStationViewModel CreatePickAndPlaceStationViewModel(IServiceProvider services)

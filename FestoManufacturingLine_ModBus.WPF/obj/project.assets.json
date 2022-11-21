@@ -2878,23 +2878,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\USER\\.nuget\\packages\\": {},
+    "C:\\Users\\ee2805\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\FestoManufacturingLine_ModBus.WPF.csproj",
+      "projectUniqueName": "C:\\Users\\ee2805\\OneDrive - tdkgroup\\Dokumentumok\\Egyetem\\DigitalFactoryLab project\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\FestoManufacturingLine_ModBus.WPF.csproj",
       "projectName": "FestoManufacturingLine_ModBus.WPF",
-      "projectPath": "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\FestoManufacturingLine_ModBus.WPF.csproj",
-      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\obj\\",
+      "projectPath": "C:\\Users\\ee2805\\OneDrive - tdkgroup\\Dokumentumok\\Egyetem\\DigitalFactoryLab project\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\FestoManufacturingLine_ModBus.WPF.csproj",
+      "packagesPath": "C:\\Users\\ee2805\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ee2805\\OneDrive - tdkgroup\\Dokumentumok\\Egyetem\\DigitalFactoryLab project\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ee2805\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2909,8 +2909,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.Domain\\FestoManufacturingLine_ModBus.Domain.csproj": {
-              "projectPath": "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.Domain\\FestoManufacturingLine_ModBus.Domain.csproj"
+            "C:\\Users\\ee2805\\OneDrive - tdkgroup\\Dokumentumok\\Egyetem\\DigitalFactoryLab project\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.Domain\\FestoManufacturingLine_ModBus.Domain.csproj": {
+              "projectPath": "C:\\Users\\ee2805\\OneDrive - tdkgroup\\Dokumentumok\\Egyetem\\DigitalFactoryLab project\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.Domain\\FestoManufacturingLine_ModBus.Domain.csproj"
             }
           }
         }
