@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FestoManufacturingLine_ModBus.Domain.Models
 {
-    public class DistributingStationModBusVariable
+    public class ModBusOutputVariable
     {
         public string? VariableName { get; set; }
         public int? CurrentValue { get; set; }

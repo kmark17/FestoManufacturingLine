@@ -15,8 +15,6 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
         public ProcessingStationViewModel(ModbusClientViewModel modbusClientViewModel)
         {
             ModbusClientViewModel = modbusClientViewModel;
-
-            Listen(null);
         }
 
 

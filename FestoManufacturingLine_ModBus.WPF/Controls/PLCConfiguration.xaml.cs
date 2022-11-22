@@ -18,9 +18,9 @@ namespace FestoManufacturingLine_ModBus.WPF.Controls
     /// <summary>
     /// Interaction logic for PLCConfiguration.xaml
     /// </summary>
-    public partial class PLCConfiguration : UserControl
+    public partial class PlcConfiguration : UserControl
     {
-        public PLCConfiguration()
+        public PlcConfiguration()
         {
             InitializeComponent();
         }

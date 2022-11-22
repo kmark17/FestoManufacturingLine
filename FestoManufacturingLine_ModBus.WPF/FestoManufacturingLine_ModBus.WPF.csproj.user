@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Controls\PlcDetails.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="StartUpWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -39,7 +42,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Controls\PLCConfiguration.xaml">
+    <Page Update="Controls\PlcConfiguration.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PlcDetails.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

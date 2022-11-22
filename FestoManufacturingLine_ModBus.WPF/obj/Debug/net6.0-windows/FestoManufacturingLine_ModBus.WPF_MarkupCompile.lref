@@ -1,15 +1,15 @@
-﻿
-FC:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\App.xaml;;
-FC:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Controls\PLCConfiguration.xaml;;
-FC:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\MainWindow.xaml;;
-FC:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\StartUpWindow.xaml;;
-FC:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Views\DistributingStationView.xaml;;
-FC:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Views\FluidicMusclePressStationView.xaml;;
-FC:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Views\HandlingStationView.xaml;;
-FC:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Views\ManufacturingLineOverviewView.xaml;;
-FC:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Views\PickAndPlaceStationView.xaml;;
-FC:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Views\ProcessingStationView.xaml;;
-FC:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Views\SettingsView.xaml;;
-FC:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Views\SortingStationView.xaml;;
-FC:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Views\TestingStationView.xaml;;
+﻿D:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+FD:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\App.xaml;;
+FD:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Controls\PlcConfiguration.xaml;;
+FD:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\MainWindow.xaml;;
+FD:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\StartUpWindow.xaml;;
+FD:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Views\DistributingStationView.xaml;;
+FD:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Views\FluidicMusclePressStationView.xaml;;
+FD:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Views\HandlingStationView.xaml;;
+FD:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Views\ManufacturingLineOverviewView.xaml;;
+FD:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Views\PickAndPlaceStationView.xaml;;
+FD:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Views\ProcessingStationView.xaml;;
+FD:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Views\SettingsView.xaml;;
+FD:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Views\SortingStationView.xaml;;
+FD:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Views\TestingStationView.xaml;;
 

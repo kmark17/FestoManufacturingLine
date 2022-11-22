@@ -1,6 +1,9 @@
 ﻿using FestoManufacturingLine_ModBus.WPF.ViewModels;
+using FestoManufacturingLine_ModBus.WPF.ViewModels.Factories;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +41,9 @@ namespace FestoManufacturingLine_ModBus.WPF.HostBuilders
 
         private static DistributingStationViewModel CreateDistributingStationViewModel(IServiceProvider services)
         {
-            return new DistributingStationViewModel(services.GetRequiredService<ModbusClientViewModel>());
+            return new DistributingStationViewModel(
+                services.GetRequiredService<ModbusClientViewModel>(),
+                services.GetRequiredService<IModbusVariableFactory>());
         }
 
         private static TestingStationViewModel CreateTestingStationViewModel(IServiceProvider services)

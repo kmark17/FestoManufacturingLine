@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\
+D:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\
 FestoManufacturingLine_ModBus.WPF
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\App.xaml
-14610788428
+D:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\App.xaml
+15-1440202416
 
-35234708906
-2631398270288
-Controls\PLCConfiguration.xaml;MainWindow.xaml;StartUpWindow.xaml;Themes\HamburgerMenus\HamburgerMenuRippleStyle.xaml;Themes\HamburgerMenus\HamburgerMenuTemplate.xaml;Views\DistributingStationView.xaml;Views\FluidicMusclePressStationView.xaml;Views\HandlingStationView.xaml;Views\ManufacturingLineOverviewView.xaml;Views\PickAndPlaceStationView.xaml;Views\ProcessingStationView.xaml;Views\SettingsView.xaml;Views\SortingStationView.xaml;Views\TestingStationView.xaml;
+381997674925
+263711822193
+Controls\PlcConfiguration.xaml;Controls\PlcDetails.xaml;MainWindow.xaml;StartUpWindow.xaml;Themes\HamburgerMenus\HamburgerMenuRippleStyle.xaml;Themes\HamburgerMenus\HamburgerMenuTemplate.xaml;Views\DistributingStationView.xaml;Views\FluidicMusclePressStationView.xaml;Views\HandlingStationView.xaml;Views\ManufacturingLineOverviewView.xaml;Views\PickAndPlaceStationView.xaml;Views\ProcessingStationView.xaml;Views\SettingsView.xaml;Views\SortingStationView.xaml;Views\TestingStationView.xaml;
 
-True
+False
 

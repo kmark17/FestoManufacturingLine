@@ -1,5 +1,8 @@
 ﻿using EasyModbus;
 using FestoManufacturingLine_ModBus.Domain.Models;
+using FestoManufacturingLine_ModBus.WPF.ViewModels.Factories;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,124 +18,18 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
     {
         private Thread? Read { get; set; }
         private Thread? Write { get; set; }
-        private ModbusClient DistributingStationModeBusClient { get; set; }
-        private DispatcherTimer PollTimer { get; } = new DispatcherTimer();
+        private ModbusClient? DistributingStationModeBusClient { get; set; }
         private ModbusClientViewModel ModbusClientViewModel { get; }
-        public ObservableCollection<DistributingStationModBusVariable> DistributingStationModBusVariables { get; } = new ObservableCollection<DistributingStationModBusVariable>();
+        public ObservableCollection<ModBusInputVariable> DistributingStationModBusInputVariables { get; } = new ObservableCollection<ModBusInputVariable>();
+        public ObservableCollection<ModBusOutputVariable> DistributingStationModBusOutputVariables { get; } = new ObservableCollection<ModBusOutputVariable>();
 
-        public DistributingStationViewModel(ModbusClientViewModel modbusClientViewModel)
+        public DistributingStationViewModel(ModbusClientViewModel modbusClientViewModel, IModbusVariableFactory modbusVariableFactory)
         {
             ModbusClientViewModel = modbusClientViewModel;
 
-            // Initializing DataGrid ItemsSource
-            {
-                DistributingStationModBusVariables!.Add(new DistributingStationModBusVariable()
-                {
-                    VariableName = "ixCylinderRetracted_ModBusTCP",
-                    CurrentValue = null,
-                    ValueToSend = null,
-                });
-
-                DistributingStationModBusVariables.Add(new DistributingStationModBusVariable()
-                {
-                    VariableName = "ixCylinderEjected_ModBusTCP",
-                    CurrentValue = null,
-                    ValueToSend = null,
-                });
-
-                DistributingStationModBusVariables.Add(new DistributingStationModBusVariable()
-                {
-                    VariableName = "ixVacuumSensor_ModBusTCP",
-                    CurrentValue = null,
-                    ValueToSend = null,
-                });
-
-                DistributingStationModBusVariables.Add(new DistributingStationModBusVariable()
-                {
-                    VariableName = "ixLeftPosition_ModBusTCP",
-                    CurrentValue = null,
-                    ValueToSend = null,
-                });
-
-                DistributingStationModBusVariables.Add(new DistributingStationModBusVariable()
-                {
-                    VariableName = "ixRightPosition_ModBusTCP",
-                    CurrentValue = null,
-                    ValueToSend = null,
-                });
-
-                DistributingStationModBusVariables.Add(new DistributingStationModBusVariable()
-                {
-                    VariableName = "ixMagazineEmpty_ModBusTCP",
-                    CurrentValue = null,
-                    ValueToSend = null,
-                });
-
-                DistributingStationModBusVariables.Add(new DistributingStationModBusVariable()
-                {
-                    VariableName = "ixNextStationIsFree_ModBusTCP",
-                    CurrentValue = null,
-                    ValueToSend = null,
-                });
-
-                DistributingStationModBusVariables.Add(new DistributingStationModBusVariable()
-                {
-                    VariableName = "qxEjectWorkpiece_ModBusTCP",
-                    CurrentValue = null,
-                    ValueToSend = null,
-                });
-
-                DistributingStationModBusVariables.Add(new DistributingStationModBusVariable()
-                {
-                    VariableName = "qxVacuumOn_ModBusTCP",
-                    CurrentValue = null,
-                    ValueToSend = null,
-                });
-
-                DistributingStationModBusVariables.Add(new DistributingStationModBusVariable()
-                {
-                    VariableName = "qxVacuumOff_ModBusTCP",
-                    CurrentValue = null,
-                    ValueToSend = null,
-                });
-
-                DistributingStationModBusVariables.Add(new DistributingStationModBusVariable()
-                {
-                    VariableName = "qxRotateLeft_ModBusTCP",
-                    CurrentValue = null,
-                    ValueToSend = null,
-                });
-
-                DistributingStationModBusVariables.Add(new DistributingStationModBusVariable()
-                {
-                    VariableName = "qxRotateRight_ModBusTCP",
-                    CurrentValue = null,
-                    ValueToSend = null,
-                });
-
-                DistributingStationModBusVariables.Add(new DistributingStationModBusVariable()
-                {
-                    VariableName = "qxUIState_ModBusTCP",
-                    CurrentValue = null,
-                    ValueToSend = null,
-                });
-            }
-
-            //PollTimer.Interval = new TimeSpan(0, 0, 3);
-            //PollTimer.Tick += PollTimer_Tick!;
-            //PollTimer.Start();
-
-            Listen(null);
+            DistributingStationModBusInputVariables = modbusVariableFactory.CreateInputVariables("DistributingStation");
+            DistributingStationModBusOutputVariables = modbusVariableFactory.CreateOutputVariables("DistributingStation");
         }
-        private void PollTimer_Tick(object sender, EventArgs e)
-        {
-            if (DistributingStationModeBusClient.Connected)
-            {
-                //ReadValues();
-                //Write();
-            }
-        }
-
 
         private void Listen(object caller)
         {
@@ -140,15 +37,14 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
             {
                 DistributingStationModeBusClient = ModbusClientViewModel.ConfigureModBusEntity("192.168.1.10", 502);
                 DistributingStationModeBusClient.Connect();
-                ReadValues();
             }
             catch (Exception)
             {
                 throw new Exception();
             }
 
-            //Read = new Thread(new ThreadStart(ReadValues));
-            //Read.Start();
+            Read = new Thread(new ThreadStart(ReadValues));
+            Read.Start();
 
             //tWrite = new Thread(new ThreadStart(Write));
             //tWrite.Start();
