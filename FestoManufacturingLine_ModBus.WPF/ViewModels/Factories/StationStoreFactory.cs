@@ -17,11 +17,14 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels.Factories
             PlcConfigurations = plcConfigurations;
         }
 
-        private PlcConfiguration CreatePlcConfiguration()
+        public PlcConfiguration CreatePlcConfiguration(string stationName)
         {
-            //IEnumerable<IConfigurationSection> inputRegisterNames = PlcConfigurations.GetSection(stationName).GetSection("InputRegisterNames").GetChildren();
+            IEnumerable<IConfigurationSection> inputRegisterNames = PlcConfigurations.GetSection(stationName).GetSection("InputRegisterNames").GetChildren();
 
-            PlcConfiguration plcConfiguration = new PlcConfiguration();
+            PlcConfiguration plcConfiguration = new PlcConfiguration()
+            {
+                InputRegisterNames = inputRegisterNames,
+            };
 
             return plcConfiguration;
         }

@@ -29,15 +29,19 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
         public ObservableCollection<ModBusInputVariable>? DistributingStationModBusInputVariables { get; } = new ObservableCollection<ModBusInputVariable>();
         public ObservableCollection<ModBusOutputVariable>? DistributingStationModBusOutputVariables { get; } = new ObservableCollection<ModBusOutputVariable>();
 
-        public DistributingStationViewModel(ModbusClientViewModel modbusClientViewModel, IDistributingStationStore distributingStationStore, IModbusVariableFactory modbusVariableFactory)
+        public DistributingStationViewModel(ModbusClientViewModel modbusClientViewModel, IStationStoreFactory stationStoreFactory,
+            IDistributingStationStore distributingStationStore, IModbusVariableFactory modbusVariableFactory)
         {
             ModbusClientViewModel = modbusClientViewModel;
 
+
+            distributingStationStore!.PlcConfiguration = stationStoreFactory.CreatePlcConfiguration("DistributingStation");
             DistributingStationModBusInputVariables = modbusVariableFactory.CreateInputVariables(distributingStationStore);
             DistributingStationModBusOutputVariables = modbusVariableFactory.CreateOutputVariables(distributingStationStore);
+            Listen();
         }
 
-        [RelayCommand]
+        //[RelayCommand]
         private void Listen()
         {
             try
@@ -61,7 +65,8 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
         {
             int index = 1;
 
-            using (StreamWriter sw = new StreamWriter(@"C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\Data\DistributingStation.txt"))
+            using (StreamWriter sw = new StreamWriter
+                (@"C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\Data\DistributingStation.txt"))
             {
                 string? header = null;
 
@@ -84,7 +89,7 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
 
                     Thread.Sleep(1000);
                     index++;
-                    if (index == 15) break;
+                    if (index == 600) break;
                 }
             }
         }

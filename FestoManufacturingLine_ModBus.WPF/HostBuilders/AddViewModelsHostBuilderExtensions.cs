@@ -44,38 +44,63 @@ namespace FestoManufacturingLine_ModBus.WPF.HostBuilders
         {
             return new DistributingStationViewModel(
                 services.GetRequiredService<ModbusClientViewModel>(),
+                services.GetRequiredService<IStationStoreFactory>(),
                 services.GetRequiredService<IDistributingStationStore>(),
                 services.GetRequiredService<IModbusVariableFactory>());
         }
 
         private static TestingStationViewModel CreateTestingStationViewModel(IServiceProvider services)
         {
-            return new TestingStationViewModel(services.GetRequiredService<ModbusClientViewModel>());
+            return new TestingStationViewModel(
+                services.GetRequiredService<ModbusClientViewModel>(),
+                services.GetRequiredService<IStationStoreFactory>(),
+                services.GetRequiredService<ITestingStationStore>(),
+                services.GetRequiredService<IModbusVariableFactory>());
         }
 
         private static ProcessingStationViewModel CreateProcessingStationViewModel(IServiceProvider services)
         {
-            return new ProcessingStationViewModel(services.GetRequiredService<ModbusClientViewModel>());
+            return new ProcessingStationViewModel(
+                services.GetRequiredService<ModbusClientViewModel>(),
+                services.GetRequiredService<IStationStoreFactory>(),
+                services.GetRequiredService<IProcessingStationStore>(),
+                services.GetRequiredService<IModbusVariableFactory>());
         }
 
         private static PickAndPlaceStationViewModel CreatePickAndPlaceStationViewModel(IServiceProvider services)
         {
-            return new PickAndPlaceStationViewModel();
+            return new PickAndPlaceStationViewModel(
+                services.GetRequiredService<ModbusClientViewModel>(),
+                services.GetRequiredService<IStationStoreFactory>(),
+                services.GetRequiredService<IPickAndPlaceStationStore>(),
+                services.GetRequiredService<IModbusVariableFactory>());
         }
 
         private static HandlingStationViewModel CreateHandlingStationViewModel(IServiceProvider services)
         {
-            return new HandlingStationViewModel();
+            return new HandlingStationViewModel(
+                services.GetRequiredService<ModbusClientViewModel>(),
+                services.GetRequiredService<IStationStoreFactory>(),
+                services.GetRequiredService<IHandlingStationStore>(),
+                services.GetRequiredService<IModbusVariableFactory>());
         }
 
         private static FluidicMusclePressStationViewModel CreateFluidicMusclePressStationViewModel(IServiceProvider services)
         {
-            return new FluidicMusclePressStationViewModel();
+            return new FluidicMusclePressStationViewModel(
+                services.GetRequiredService<ModbusClientViewModel>(),
+                services.GetRequiredService<IStationStoreFactory>(),
+                services.GetRequiredService<IFluidicMusclePressStationStore>(),
+                services.GetRequiredService<IModbusVariableFactory>());
         }
 
         private static SortingStationViewModel CreateSortingStationViewModel(IServiceProvider services)
         {
-            return new SortingStationViewModel();
+            return new SortingStationViewModel(
+                services.GetRequiredService<ModbusClientViewModel>(),
+                services.GetRequiredService<IStationStoreFactory>(),
+                services.GetRequiredService<ISortingStationStore>(),
+                services.GetRequiredService<IModbusVariableFactory>());
         }
 
         private static SettingsViewModel CreateSettingsViewModel(IServiceProvider services)

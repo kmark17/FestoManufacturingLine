@@ -1,4 +1,5 @@
-﻿using FestoManufacturingLine_ModBus.WPF.ViewModels.Factories;
+﻿using FestoManufacturingLine_ModBus.WPF.State.PlcConfigurations;
+using FestoManufacturingLine_ModBus.WPF.ViewModels.Factories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +21,15 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
         public FluidicMusclePressStationViewModel? FluidicMusclePressStationViewModel { get; }
         public SortingStationViewModel? SortingStationViewModel { get; }
         public SettingsViewModel? SettingsViewModel { get; }
+        public IDistributingStationStore? DistributingStationStore { get; }
+        public TestingStationStore? TestingStationStore { get; }
+        public ProcessingStationStore? ProcessingStationStore { get; }
+        public PickAndPLaceStationStore? PickAndPLaceStationStore { get; }
+        public HandlingStationStore? HandlingStationStore { get; }
+        public FluidicMusclePressStationStore? FluidicMusclePressStationStore { get; }
+        public SortingStationStore? SortingStationStore { get; }
 
-        public MainViewModel(IViewModelFactory viewModelFactory, IStationStoreFactory stationStoreFactory)
+        public MainViewModel(IViewModelFactory viewModelFactory, IStationStoreFactory stationStoreFactory, IDistributingStationStore distributingStationStore)
         {
             // Create ViewModels
             ManufacturingLineOverviewViewModel = viewModelFactory.CreateViewModel(ViewType.Overview) as ManufacturingLineOverviewViewModel;
@@ -35,7 +43,8 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
             SettingsViewModel = viewModelFactory.CreateViewModel(ViewType.Settings) as SettingsViewModel;
 
             // Create Stores
-
+            DistributingStationStore = distributingStationStore;
+            DistributingStationStore!.PlcConfiguration = stationStoreFactory.CreatePlcConfiguration("DistributingStation");
         }
     }
 }

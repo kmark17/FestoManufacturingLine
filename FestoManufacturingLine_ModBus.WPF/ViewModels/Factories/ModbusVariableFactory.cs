@@ -26,7 +26,7 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels.Factories
             {
                 modBusInputVariables!.Add(new ModBusInputVariable()
                 {
-                    VariableName = inputRegisterName,
+                    VariableName = inputRegisterName.Value,
                     CurrentValue = null,
                 });
             }
@@ -44,7 +44,7 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels.Factories
             {
                 modBusOutputVariables!.Add(new ModBusOutputVariable()
                 {
-                    VariableName = outputRegisterName,
+                    VariableName = outputRegisterName.Value,
                     ValueToSend = null,
                 });
             }

@@ -21,7 +21,7 @@
     <PackageReference Include="MahApps.Metro" Version="2.4.9" />
     <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
     <PackageReference Include="MaterialDesignThemes" Version="4.7.0-ci343" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
     <PackageReference Include="System.IO.Ports" Version="5.0.0" />
   </ItemGroup>
 
@@ -31,7 +31,7 @@
 
   <ItemGroup>
     <Reference Include="EasyModbus">
-      <HintPath>..\..\EasyModbus.dll</HintPath>
+      <HintPath>..\..\..\EasyModbus.dll</HintPath>
     </Reference>
   </ItemGroup>
 

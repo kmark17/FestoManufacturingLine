@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace FestoManufacturingLine_ModBus.Domain.Models
         public int? ModbusPortNumber { get; set; }
         public int? StartingAddress { get; set; }
         public int? NumberOfRegisters { get; set; }
-        public string[]? InputRegisterNames { get; set; }
-        public string[]? OutputRegisterNames { get; set; }
+        public IEnumerable<IConfigurationSection>? InputRegisterNames { get; set; }
+        public IEnumerable<IConfigurationSection>? OutputRegisterNames { get; set; }
     }
 }

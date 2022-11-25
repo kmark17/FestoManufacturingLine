@@ -16,6 +16,12 @@ namespace FestoManufacturingLine_ModBus.WPF.HostBuilders
             host.ConfigureServices((services) =>
             {
                 services.AddSingleton<IDistributingStationStore, DistributingStationStore>();
+                services.AddSingleton<ITestingStationStore, TestingStationStore>();
+                services.AddSingleton<IProcessingStationStore, ProcessingStationStore>();
+                services.AddSingleton<IPickAndPlaceStationStore, PickAndPLaceStationStore>();
+                services.AddSingleton<IHandlingStationStore, HandlingStationStore>();
+                services.AddSingleton<IFluidicMusclePressStationStore, FluidicMusclePressStationStore>();
+                services.AddSingleton<ISortingStationStore, SortingStationStore>();
             });
 
             return host;
