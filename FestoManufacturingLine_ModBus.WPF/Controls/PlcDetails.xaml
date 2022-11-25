@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:FestoManufacturingLine_ModBus.WPF.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="450"
+    d:DesignHeight="600"
     d:DesignWidth="800"
     mc:Ignorable="d">
 
@@ -36,50 +36,51 @@
 
             <StackPanel Margin="15">
                 <WrapPanel>
-                    <Ellipse
-                        Width="7.5"
-                        Height="7.5"
-                        Fill="Gray"
-                        Visibility="{c:Binding Path=!IsDistributingStationOnline,
-                                               FallbackValue=Collapsed}" />
-
-                    <Ellipse
-                        Width="7.5"
-                        Height="7.5"
-                        Fill="ForestGreen"
-                        Visibility="{c:Binding Path=IsDistributingStationOnline,
-                                               FallbackValue=Collapsed}" />
-
                     <Label
-                        Content="Distributing station"
+                        Content="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=StationName}"
                         FontSize="16"
                         FontWeight="Bold" />
+
+                    <Ellipse
+                        Width="8"
+                        Height="8"
+                        Margin="1.5,3,0,0"
+                        Fill="Gray"
+                        Visibility="{c:Binding RelativeSource={RelativeSource AncestorType=UserControl},
+                                               Path=!IsStationOnline,
+                                               FallbackValue=Collapsed}" />
+
+                    <Ellipse
+                        Width="8"
+                        Height="8"
+                        Margin="1.5,3,0,0"
+                        Fill="ForestGreen"
+                        Visibility="{c:Binding RelativeSource={RelativeSource AncestorType=UserControl},
+                                               Path=IsStationOnline,
+                                               FallbackValue=Collapsed}" />
                 </WrapPanel>
+
                 <TextBlock
                     Padding="15,10,0,0"
                     FontSize="14"
                     Foreground="White"
-                    TextWrapping="Wrap">
-                    The distributing station is the first station in which the workpieces are dispatched from the
-                    container. The workpiece gets placed onto the next station with the help of a pneumatic
-                    rotational mechanism mounted with a vacuum gripper.
-                </TextBlock>
+                    Text="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=StationDescription}"
+                    TextAlignment="Justify"
+                    TextWrapping="Wrap" />
 
                 <TextBlock
                     Padding="15,15,0,0"
                     FontSize="14"
                     Foreground="White"
-                    TextWrapping="Wrap">
-                    Number of inputs/outputs: 7DI/ 5DO
-                </TextBlock>
+                    Text="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=StationNumberOfInputsOutputs}"
+                    TextWrapping="Wrap" />
 
                 <TextBlock
                     Padding="15,15,0,0"
                     FontSize="14"
                     Foreground="White"
-                    TextWrapping="Wrap">
-                    Required power and air pressure: 24VDC, 4-6bar
-                </TextBlock>
+                    Text="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=StationReqPowerAirPressure}"
+                    TextWrapping="Wrap" />
             </StackPanel>
         </Border>
 
@@ -97,7 +98,7 @@
             CanUserAddRows="False"
             FontSize="14"
             GridLinesVisibility="All"
-            ItemsSource="{Binding DistributingStationModBusInputVariables}" />
+            ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=StationModBusInputVariables}" />
 
         <Label
             Grid.Row="3"
@@ -112,12 +113,13 @@
             CanUserAddRows="False"
             FontSize="14"
             GridLinesVisibility="All"
-            ItemsSource="{Binding DistributingStationModBusOutputVariables}" />
+            ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=StationModBusOutputVariables}" />
 
         <Button
             Grid.Row="5"
             Width="100"
             HorizontalAlignment="Right"
+            Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=StartRecordingValues}"
             Content="Send"
             FontSize="14" />
     </Grid>

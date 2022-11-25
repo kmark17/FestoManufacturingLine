@@ -28,7 +28,7 @@ namespace FestoManufacturingLine_ModBus.WPF
             return Host.CreateDefaultBuilder(args)
                 .AddConfiguration()
                 .AddServices()
-                //.AddStores()
+                .AddStores()
                 .AddViewModels()
                 .AddViews();
         }
@@ -40,11 +40,11 @@ namespace FestoManufacturingLine_ModBus.WPF
             Window startUpWindow = _host.Services.GetRequiredService<StartUpWindow>();
             startUpWindow.Show();
 
-            await Task.Delay(3000);
+            //await Task.Delay(3000);
 
             Window mainWindow = _host.Services.GetRequiredService<MainWindow>();
-            mainWindow.Show();
             startUpWindow.Close();
+            mainWindow.Show();
 
             base.OnStartup(e);
         }

@@ -11,15 +11,6 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        
-        //private ModbusClient TestingStationModeBusClient { get; set; }
-        //private ModbusClient ProcessingStationModeBusClient { get; set; }
-        //private ModbusClient PickAndPlaceStationModeBusClient { get; set; }
-        //private ModbusClient HandlingStationModeBusClient { get; set; }
-        //private ModbusClient FluidicMusclePressStationModeBusClient { get; set; }
-        //private ModbusClient SortingStationModeBusClient { get; set; }
-
-        public IViewModelFactory ViewModelFactory { get; }
         public ManufacturingLineOverviewViewModel? ManufacturingLineOverviewViewModel { get; }
         public DistributingStationViewModel? DistributingStationViewModel { get; }
         public TestingStationViewModel? TestingStationViewModel { get; }
@@ -30,10 +21,9 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
         public SortingStationViewModel? SortingStationViewModel { get; }
         public SettingsViewModel? SettingsViewModel { get; }
 
-        public MainViewModel(IViewModelFactory viewModelFactory)
+        public MainViewModel(IViewModelFactory viewModelFactory, IStationStoreFactory stationStoreFactory)
         {
-            ViewModelFactory = viewModelFactory;
-
+            // Create ViewModels
             ManufacturingLineOverviewViewModel = viewModelFactory.CreateViewModel(ViewType.Overview) as ManufacturingLineOverviewViewModel;
             DistributingStationViewModel = viewModelFactory.CreateViewModel(ViewType.Distributing) as DistributingStationViewModel;
             TestingStationViewModel = viewModelFactory.CreateViewModel(ViewType.Testing) as TestingStationViewModel;
@@ -43,6 +33,9 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
             FluidicMusclePressStationViewModel = viewModelFactory.CreateViewModel(ViewType.FluidicMusclePress) as FluidicMusclePressStationViewModel;
             SortingStationViewModel = viewModelFactory.CreateViewModel(ViewType.Sorting) as SortingStationViewModel;
             SettingsViewModel = viewModelFactory.CreateViewModel(ViewType.Settings) as SettingsViewModel;
+
+            // Create Stores
+
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using FestoManufacturingLine_ModBus.Domain.Models;
+using FestoManufacturingLine_ModBus.WPF.State.PlcConfigurations;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -11,23 +12,21 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels.Factories
 {
     public class ModbusVariableFactory : IModbusVariableFactory
     {
-        private IConfiguration PlcConfigurations { get; }
-
-        public ModbusVariableFactory(IConfiguration plcConfigurations)
+        public ModbusVariableFactory()
         {
-            PlcConfigurations = plcConfigurations;
         }
 
-        public ObservableCollection<ModBusInputVariable> CreateInputVariables(string stationName)
+        public ObservableCollection<ModBusInputVariable>? CreateInputVariables(IPlcConfigurationStore plcConfigurationStore)
         {
-            IEnumerable<IConfigurationSection> inputRegisterNames = PlcConfigurations.GetSection(stationName).GetSection("InputRegisterNames").GetChildren();
             ObservableCollection<ModBusInputVariable> modBusInputVariables = new ObservableCollection<ModBusInputVariable>();
 
-            foreach (var inputRegisterName in inputRegisterNames)
+            if (plcConfigurationStore.PlcConfiguration?.InputRegisterNames is null) return null;
+
+            foreach (var inputRegisterName in plcConfigurationStore.PlcConfiguration.InputRegisterNames)
             {
                 modBusInputVariables!.Add(new ModBusInputVariable()
                 {
-                    VariableName = inputRegisterName?.Value,
+                    VariableName = inputRegisterName,
                     CurrentValue = null,
                 });
             }
@@ -35,17 +34,17 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels.Factories
             return modBusInputVariables;
         }
 
-        public ObservableCollection<ModBusOutputVariable> CreateOutputVariables(string stationName)
+        public ObservableCollection<ModBusOutputVariable>? CreateOutputVariables(IPlcConfigurationStore plcConfigurationStore)
         {
-            IEnumerable<IConfigurationSection> outputRegisterNames = PlcConfigurations.GetSection(stationName).GetSection("OutputRegisterNames").GetChildren();
             ObservableCollection<ModBusOutputVariable> modBusOutputVariables = new ObservableCollection<ModBusOutputVariable>();
 
-            foreach (var outputRegisterName in outputRegisterNames)
+            if (plcConfigurationStore.PlcConfiguration?.OutputRegisterNames is null) return null;
+
+            foreach (var outputRegisterName in plcConfigurationStore.PlcConfiguration.OutputRegisterNames)
             {
                 modBusOutputVariables!.Add(new ModBusOutputVariable()
                 {
-                    VariableName = outputRegisterName?.Value,
-                    CurrentValue = null,
+                    VariableName = outputRegisterName,
                     ValueToSend = null,
                 });
             }

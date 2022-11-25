@@ -1,5 +1,8 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.Input;
+using FestoManufacturingLine_ModBus.Domain.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +23,78 @@ namespace FestoManufacturingLine_ModBus.WPF.Controls
     /// </summary>
     public partial class PlcDetails : UserControl
     {
+        public static readonly DependencyProperty IsStationOnlineProperty =
+            DependencyProperty.Register("IsStationOnline", typeof(bool), typeof(PlcDetails), new PropertyMetadata(false));
+
+        public bool IsStationOnline
+        {
+            get { return (bool)GetValue(IsStationOnlineProperty); }
+            set { SetValue(IsStationOnlineProperty, value); }
+        }
+
+        public static readonly DependencyProperty StationNameProperty =
+            DependencyProperty.Register("StationName", typeof(string), typeof(PlcDetails), new PropertyMetadata(string.Empty));
+
+        public string StationName
+        {
+            get { return (string)GetValue(StationNameProperty); }
+            set { SetValue(StationNameProperty, value); }
+        }
+
+        public static readonly DependencyProperty StationDescriptionProperty =
+            DependencyProperty.Register("StationDescription", typeof(string), typeof(PlcDetails), new PropertyMetadata(string.Empty));
+
+        public string StationDescription
+        {
+            get { return (string)GetValue(StationDescriptionProperty); }
+            set { SetValue(StationDescriptionProperty, value); }
+        }
+
+        public static readonly DependencyProperty StationNumberOfInputsOutputsProperty =
+            DependencyProperty.Register("StationNumberOfInputsOutputs", typeof(string), typeof(PlcDetails), new PropertyMetadata(string.Empty));
+
+        public string StationNumberOfInputsOutputs
+        {
+            get { return (string)GetValue(StationNumberOfInputsOutputsProperty); }
+            set { SetValue(StationNumberOfInputsOutputsProperty, value); }
+        }
+
+        public static readonly DependencyProperty StationReqPowerAirPressureProperty =
+            DependencyProperty.Register("StationReqPowerAirPressure", typeof(string), typeof(PlcDetails), new PropertyMetadata(string.Empty));
+
+        public string StationReqPowerAirPressure
+        {
+            get { return (string)GetValue(StationReqPowerAirPressureProperty); }
+            set { SetValue(StationReqPowerAirPressureProperty, value); }
+        }
+
+        public static readonly DependencyProperty StationModBusInputVariablesProperty =
+            DependencyProperty.Register("StationModBusInputVariables", typeof(ObservableCollection<ModBusInputVariable>), typeof(PlcDetails), new PropertyMetadata(null));
+
+        public ObservableCollection<ModBusInputVariable> StationModBusInputVariables
+        {
+            get { return (ObservableCollection<ModBusInputVariable>)GetValue(StationModBusInputVariablesProperty); }
+            set { SetValue(StationModBusInputVariablesProperty, value); }
+        }
+
+        public static readonly DependencyProperty StationModBusOutputVariablesProperty =
+            DependencyProperty.Register("StationModBusOutputVariables", typeof(ObservableCollection<ModBusOutputVariable>), typeof(PlcDetails), new PropertyMetadata(null));
+
+        public ObservableCollection<ModBusOutputVariable> StationModBusOutputVariables
+        {
+            get { return (ObservableCollection<ModBusOutputVariable>)GetValue(StationModBusOutputVariablesProperty); }
+            set { SetValue(StationModBusOutputVariablesProperty, value); }
+        }
+
+        public static readonly DependencyProperty StartRecordingValuesProperty =
+           DependencyProperty.Register("StartRecordingValues", typeof(RelayCommand), typeof(PlcDetails), new PropertyMetadata(null));
+
+        public RelayCommand StartRecordingValues
+        {
+            get { return (RelayCommand)GetValue(StartRecordingValuesProperty); }
+            set { SetValue(StartRecordingValuesProperty, value); }
+        }
+
         public PlcDetails()
         {
             InitializeComponent();

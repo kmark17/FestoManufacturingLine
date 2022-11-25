@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\App.xaml
-14-89660275
+15-1440202416
 
-35-1391458349
+41974162188
 263711822193
-Controls\PlcConfiguration.xaml;MainWindow.xaml;StartUpWindow.xaml;Themes\HamburgerMenus\HamburgerMenuRippleStyle.xaml;Themes\HamburgerMenus\HamburgerMenuTemplate.xaml;Views\DistributingStationView.xaml;Views\FluidicMusclePressStationView.xaml;Views\HandlingStationView.xaml;Views\ManufacturingLineOverviewView.xaml;Views\PickAndPlaceStationView.xaml;Views\ProcessingStationView.xaml;Views\SettingsView.xaml;Views\SortingStationView.xaml;Views\TestingStationView.xaml;
+Controls\PlcConfiguration.xaml;Controls\PlcDetails.xaml;MainWindow.xaml;StartUpWindow.xaml;Themes\HamburgerMenus\HamburgerMenuRippleStyle.xaml;Themes\HamburgerMenus\HamburgerMenuTemplate.xaml;Views\DistributingStationView.xaml;Views\FluidicMusclePressStationView.xaml;Views\HandlingStationView.xaml;Views\ManufacturingLineOverviewView.xaml;Views\PickAndPlaceStationView.xaml;Views\ProcessingStationView.xaml;Views\SettingsView.xaml;Views\SortingStationView.xaml;Views\TestingStationView.xaml;
 
 False
 

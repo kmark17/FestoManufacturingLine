@@ -1,4 +1,5 @@
-﻿using FestoManufacturingLine_ModBus.WPF.ViewModels;
+﻿using FestoManufacturingLine_ModBus.WPF.State.PlcConfigurations;
+using FestoManufacturingLine_ModBus.WPF.ViewModels;
 using FestoManufacturingLine_ModBus.WPF.ViewModels.Factories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -43,6 +44,7 @@ namespace FestoManufacturingLine_ModBus.WPF.HostBuilders
         {
             return new DistributingStationViewModel(
                 services.GetRequiredService<ModbusClientViewModel>(),
+                services.GetRequiredService<IDistributingStationStore>(),
                 services.GetRequiredService<IModbusVariableFactory>());
         }
 
