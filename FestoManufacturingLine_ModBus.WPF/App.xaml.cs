@@ -40,7 +40,7 @@ namespace FestoManufacturingLine_ModBus.WPF
             Window startUpWindow = _host.Services.GetRequiredService<StartUpWindow>();
             startUpWindow.Show();
 
-            //await Task.Delay(3000);
+            await Task.Delay(1500);
 
             Window mainWindow = _host.Services.GetRequiredService<MainWindow>();
             startUpWindow.Close();

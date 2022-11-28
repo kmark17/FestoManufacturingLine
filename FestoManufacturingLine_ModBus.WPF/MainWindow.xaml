@@ -22,11 +22,17 @@
 
     <Window.Background>
         <ImageBrush
-            ImageSource="/Resources/Background.jpg"
             Opacity="0.2"
             Stretch="UniformToFill"
             VirtualizingPanel.IsVirtualizing="True"
-            VirtualizingPanel.VirtualizationMode="Recycling" />
+            VirtualizingPanel.VirtualizationMode="Recycling">
+            <ImageBrush.ImageSource>
+                <BitmapImage
+                    CacheOption="OnLoad"
+                    DecodePixelWidth="2000"
+                    UriSource="/Resources/Background.jpg" />
+            </ImageBrush.ImageSource>
+        </ImageBrush>
     </Window.Background>
 
     <mah:HamburgerMenu
@@ -61,9 +67,9 @@
         <mah:HamburgerMenu.ItemsSource>
             <mah:HamburgerMenuItemCollection>
 
-                <mah:HamburgerMenuIconItem Icon="{iconPacks:RemixIcon Kind=DashboardLine}" Label="Manufacturing line overview">
+                <mah:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=DistributeVerticalBottom}" Label="Application overview">
                     <mah:HamburgerMenuIconItem.Tag>
-                        <views:ManufacturingLineOverviewView DataContext="{Binding Source={StaticResource proxy}, Path=Data.ManufacturingLineOverviewViewModel}" />
+                        <views:LandingPage />
                     </mah:HamburgerMenuIconItem.Tag>
                 </mah:HamburgerMenuIconItem>
 
@@ -130,7 +136,7 @@
 
         <mah:HamburgerMenu.ContentTemplate>
             <DataTemplate DataType="{x:Type mah:HamburgerMenuIconItem}">
-                <Grid Margin="30,30,30,10">
+                <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>

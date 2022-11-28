@@ -12,9 +12,10 @@ namespace FestoManufacturingLine_ModBus.Domain.Models
     {
         public string? Name { get; set; }
         public string? IpAddress { get; set; }
-        public int? ModbusPortNumber { get; set; }
-        public int? StartingAddress { get; set; }
-        public int? NumberOfRegisters { get; set; }
+        public int ModbusPortNumber { get; set; }
+        public int StartingAddress { get; set; }
+        public int NumberOfRegisters { get; set; }
+        public bool IsStationOnline { get; set; }
         public IEnumerable<IConfigurationSection>? InputRegisterNames { get; set; }
         public IEnumerable<IConfigurationSection>? OutputRegisterNames { get; set; }
     }

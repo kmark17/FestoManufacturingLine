@@ -7,7 +7,6 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels.Factories
     /// </summary>
     public class ViewModelFactory : IViewModelFactory
     {
-        private CreateViewModel<ManufacturingLineOverviewViewModel> CreateManufacturingLineOverviewViewModel { get; }
         private CreateViewModel<DistributingStationViewModel> CreateDistributingStationViewModel { get; }
         private CreateViewModel<TestingStationViewModel> CreateTestingStationViewModel { get; }
         private CreateViewModel<ProcessingStationViewModel> CreateProcessingStationViewModel { get; }
@@ -17,13 +16,12 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels.Factories
         private CreateViewModel<SortingStationViewModel> CreateSortingStationViewModel { get; }
         private CreateViewModel<SettingsViewModel> CreateSettingsViewModel { get; }
 
-        public ViewModelFactory(CreateViewModel<ManufacturingLineOverviewViewModel> createManufacturingLineOverviewViewModel, CreateViewModel<DistributingStationViewModel> createDistributingStationViewModel,
+        public ViewModelFactory(CreateViewModel<DistributingStationViewModel> createDistributingStationViewModel,
             CreateViewModel<TestingStationViewModel> createTestingStationViewModel, CreateViewModel<ProcessingStationViewModel> createProcessingStationViewModel,
             CreateViewModel<PickAndPlaceStationViewModel> createPickAndPlaceStationViewModel, CreateViewModel<HandlingStationViewModel> createHandlingStationViewModel,
             CreateViewModel<FluidicMusclePressStationViewModel> createFluidicMusclePressStationViewModel, CreateViewModel<SortingStationViewModel> createSortingStationViewModel,
             CreateViewModel<SettingsViewModel> createSettingsViewModel)
         {
-            CreateManufacturingLineOverviewViewModel = createManufacturingLineOverviewViewModel;
             CreateDistributingStationViewModel = createDistributingStationViewModel;
             CreateTestingStationViewModel = createTestingStationViewModel;
             CreateProcessingStationViewModel = createProcessingStationViewModel;
@@ -38,9 +36,6 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels.Factories
         {
             switch (viewType)
             {
-                case ViewType.Overview:
-                    return CreateManufacturingLineOverviewViewModel();
-
                 case ViewType.Distributing:
                     return CreateDistributingStationViewModel();
 

@@ -3,7 +3,9 @@ using FestoManufacturingLine_ModBus.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -30,6 +32,15 @@ namespace FestoManufacturingLine_ModBus.WPF.Controls
         {
             get { return (bool)GetValue(IsStationOnlineProperty); }
             set { SetValue(IsStationOnlineProperty, value); }
+        }
+
+        public static readonly DependencyProperty IsListeningProperty =
+            DependencyProperty.Register("IsListening", typeof(bool), typeof(PlcDetails), new PropertyMetadata(false));
+
+        public bool IsListening
+        {
+            get { return (bool)GetValue(IsListeningProperty); }
+            set { SetValue(IsListeningProperty, value); }
         }
 
         public static readonly DependencyProperty StationNameProperty =
@@ -93,6 +104,24 @@ namespace FestoManufacturingLine_ModBus.WPF.Controls
         {
             get { return (RelayCommand)GetValue(StartRecordingValuesProperty); }
             set { SetValue(StartRecordingValuesProperty, value); }
+        }
+
+        public static readonly DependencyProperty StopRecordingValuesProperty =
+           DependencyProperty.Register("StopRecordingValues", typeof(RelayCommand), typeof(PlcDetails), new PropertyMetadata(null));
+
+        public RelayCommand StopRecordingValues
+        {
+            get { return (RelayCommand)GetValue(StopRecordingValuesProperty); }
+            set { SetValue(StopRecordingValuesProperty, value); }
+        }
+
+        public static readonly DependencyProperty SendValuesProperty =
+           DependencyProperty.Register("SendValues", typeof(RelayCommand), typeof(PlcDetails), new PropertyMetadata(null));
+
+        public RelayCommand SendValues
+        {
+            get { return (RelayCommand)GetValue(SendValuesProperty); }
+            set { SetValue(SendValuesProperty, value); }
         }
 
         public PlcDetails()

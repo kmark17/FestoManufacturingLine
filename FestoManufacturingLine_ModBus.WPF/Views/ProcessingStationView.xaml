@@ -6,24 +6,54 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:FestoManufacturingLine_ModBus.WPF.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
+    d:DesignHeight="700"
+    d:DesignWidth="1500"
     mc:Ignorable="d">
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <controls:PlcDetails
-            IsStationOnline="{Binding IsDistributingStationOnline}"
-            StartRecordingValues="{Binding StartRecordingValuesCommand}"
-            StationDescription="The distributing station is the first station in which the workpieces are dispatched from the container. The workpiece gets placed onto the next station with the help of a pneumatic rotational mechanism mounted with a vacuum gripper."
-            StationModBusInputVariables="{Binding DistributingStationModBusInputVariables}"
-            StationModBusOutputVariables="{Binding DistributingStationModBusOutputVariables}"
-            StationName="Distributing Station"
-            StationNumberOfInputsOutputs="Number of inputs/outputs: 7DI/ 5DO"
-            StationReqPowerAirPressure="Required power and air pressure: 24VDC, 4-6bar" />
+        <Grid Background="#90101010">
+            <controls:PlcDetails
+                Margin="10"
+                IsListening="{Binding IsListening}"
+                IsStationOnline="{Binding IsProcessingStationOnline}"
+                SendValues="{Binding SendCommand}"
+                StartRecordingValues="{Binding ListenCommand}"
+                StationDescription="At first, the existence of the drilling hole is tested in this station. After the test, there is an imaginary finishing process. In the last position, the workpiece is handed over to the next station."
+                StationModBusInputVariables="{Binding ProcessingStationModBusInputVariables}"
+                StationModBusOutputVariables="{Binding ProcessingStationModBusOutputVariables}"
+                StationName="Processing Station"
+                StationNumberOfInputsOutputs="Number of inputs/outputs: 8DI/8DO"
+                StationReqPowerAirPressure="Required power and air pressure: 24VDC, 4-6bar"
+                StopRecordingValues="{Binding StopCommand}" />
+        </Grid>
+
+
+        <StackPanel
+            Grid.Column="1"
+            Margin="30,0,0,0"
+            VerticalAlignment="Center">
+            <Label
+                Margin="0,0,0,25"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Content="Processing Station Process"
+                FontSize="30"
+                FontWeight="Bold" />
+
+            <!--  Leaving Source here for easier designing  -->
+            <MediaElement
+                x:Name="stationAnimationMediaElement"
+                Width="auto"
+                MaxHeight="750"
+                Margin="30"
+                MediaEnded="stationAnimationMediaElement_MediaEnded"
+                Source="/Resources/Animations/ProcessingStation.wmv"
+                UnloadedBehavior="Manual" />
+        </StackPanel>
     </Grid>
 </UserControl>

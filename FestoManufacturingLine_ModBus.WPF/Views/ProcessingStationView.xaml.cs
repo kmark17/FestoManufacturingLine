@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +25,21 @@ namespace FestoManufacturingLine_ModBus.WPF.Views
         public ProcessingStationView()
         {
             InitializeComponent();
+
+            try
+            {
+                stationAnimationMediaElement.Source = new Uri(new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName + "/Resources/Animations/ProcessingStation.wmv", UriKind.Absolute);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void stationAnimationMediaElement_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            stationAnimationMediaElement.Position = new TimeSpan(0, 0, 0);
+            stationAnimationMediaElement.Play();
         }
     }
 }

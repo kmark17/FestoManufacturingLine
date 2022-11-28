@@ -51,6 +51,30 @@
           "lib/netstandard2.0/DynamicExpresso.Core.dll": {}
         }
       },
+      "FFME.Windows/4.4.350": {
+        "type": "package",
+        "dependencies": {
+          "FFmpeg.AutoGen": "4.4.0"
+        },
+        "compile": {
+          "lib/net5.0-windows7.0/ffme.win.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/ffme.win.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      },
+      "FFmpeg.AutoGen/4.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/FFmpeg.AutoGen.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/FFmpeg.AutoGen.dll": {}
+        }
+      },
       "MahApps.Metro/2.4.9": {
         "type": "package",
         "dependencies": {
@@ -834,6 +858,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "FFME.Windows": "4.4.350",
           "Microsoft.Extensions.Hosting": "7.0.0"
         },
         "compile": {
@@ -928,6 +953,48 @@
         "lib/net45/DynamicExpresso.Core.dll",
         "lib/net461/DynamicExpresso.Core.dll",
         "lib/netstandard2.0/DynamicExpresso.Core.dll"
+      ]
+    },
+    "FFME.Windows/4.4.350": {
+      "sha512": "I5cuudTPFrk10H4J89R124HGjEw2Dbivsmt1mrfDPSdXL5t4MbYeCAt1aa2tC5cU22VvqwRpv4vWHVPU4y8GIg==",
+      "type": "package",
+      "path": "ffme.windows/4.4.350",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "ffme.png",
+        "ffme.windows.4.4.350.nupkg.sha512",
+        "ffme.windows.nuspec",
+        "lib/net461/ffme.win.dll",
+        "lib/net461/ffme.win.xml",
+        "lib/net48/ffme.win.dll",
+        "lib/net48/ffme.win.xml",
+        "lib/net5.0-windows7.0/ffme.win.dll",
+        "lib/net5.0-windows7.0/ffme.win.xml",
+        "readme.txt"
+      ]
+    },
+    "FFmpeg.AutoGen/4.4.0": {
+      "sha512": "MvlFWhwQMLCKzs4cHTzhIPdlP151+jBB4xx06sVXvGTpV66Isvjj5GvYLkEfUX1etEBNxUw8gCIE8CG/nQqtSw==",
+      "type": "package",
+      "path": "ffmpeg.autogen/4.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "ffmpeg.autogen.4.4.0.nupkg.sha512",
+        "ffmpeg.autogen.nuspec",
+        "lib/net40/FFmpeg.AutoGen.dll",
+        "lib/net40/FFmpeg.AutoGen.xml",
+        "lib/net45/FFmpeg.AutoGen.dll",
+        "lib/net45/FFmpeg.AutoGen.xml",
+        "lib/net472/FFmpeg.AutoGen.dll",
+        "lib/net472/FFmpeg.AutoGen.xml",
+        "lib/netstandard2.0/FFmpeg.AutoGen.dll",
+        "lib/netstandard2.0/FFmpeg.AutoGen.xml",
+        "lib/netstandard2.1/FFmpeg.AutoGen.dll",
+        "lib/netstandard2.1/FFmpeg.AutoGen.xml"
       ]
     },
     "MahApps.Metro/2.4.9": {
@@ -3075,23 +3142,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ee2805\\.nuget\\packages\\": {},
+    "C:\\Users\\USER\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ee2805\\OneDrive - tdkgroup\\Dokumentumok\\Egyetem\\DigitalFactoryLab project\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\FestoManufacturingLine_ModBus.WPF.csproj",
+      "projectUniqueName": "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\FestoManufacturingLine_ModBus.WPF.csproj",
       "projectName": "FestoManufacturingLine_ModBus.WPF",
-      "projectPath": "C:\\Users\\ee2805\\OneDrive - tdkgroup\\Dokumentumok\\Egyetem\\DigitalFactoryLab project\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\FestoManufacturingLine_ModBus.WPF.csproj",
-      "packagesPath": "C:\\Users\\ee2805\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ee2805\\OneDrive - tdkgroup\\Dokumentumok\\Egyetem\\DigitalFactoryLab project\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\obj\\",
+      "projectPath": "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\FestoManufacturingLine_ModBus.WPF.csproj",
+      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "outputPath": "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ee2805\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3106,8 +3173,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\ee2805\\OneDrive - tdkgroup\\Dokumentumok\\Egyetem\\DigitalFactoryLab project\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.Domain\\FestoManufacturingLine_ModBus.Domain.csproj": {
-              "projectPath": "C:\\Users\\ee2805\\OneDrive - tdkgroup\\Dokumentumok\\Egyetem\\DigitalFactoryLab project\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.Domain\\FestoManufacturingLine_ModBus.Domain.csproj"
+            "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.Domain\\FestoManufacturingLine_ModBus.Domain.csproj": {
+              "projectPath": "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.Domain\\FestoManufacturingLine_ModBus.Domain.csproj"
             }
           }
         }
@@ -3169,7 +3236,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.110\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.111\\RuntimeIdentifierGraph.json"
       }
     }
   }

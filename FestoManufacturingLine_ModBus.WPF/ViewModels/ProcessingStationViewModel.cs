@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using EasyModbus;
 using FestoManufacturingLine_ModBus.Domain.Models;
+using FestoManufacturingLine_ModBus.WPF.State.OutputPath;
 using FestoManufacturingLine_ModBus.WPF.State.PlcConfigurations;
 using FestoManufacturingLine_ModBus.WPF.ViewModels.Factories;
 using System;
@@ -17,76 +19,137 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
     public partial class ProcessingStationViewModel : ViewModelBase
     {
         [ObservableProperty]
-        private bool _isDistributingStationOnline = true;
+        private bool _isProcessingStationOnline = false;
+
+        [ObservableProperty]
+        private bool _isListening = true;
+
         private Thread? ReadThread { get; set; }
         private Thread? WriteThread { get; set; }
-        private ModbusClient? DistributingStationModeBusClient { get; set; }
+        private ModbusClient? ProcessingStationModeBusClient { get; set; }
         private ModbusClientViewModel ModbusClientViewModel { get; }
-        public ObservableCollection<ModBusInputVariable>? DistributingStationModBusInputVariables { get; } = new ObservableCollection<ModBusInputVariable>();
-        public ObservableCollection<ModBusOutputVariable>? DistributingStationModBusOutputVariables { get; } = new ObservableCollection<ModBusOutputVariable>();
+        private IProcessingStationStore ProcessingStationStore { get; set; }
+        private IOutputPathStore OutputPathStore { get; set; }
+        public ObservableCollection<ModBusInputVariable>? ProcessingStationModBusInputVariables { get; } = new ObservableCollection<ModBusInputVariable>();
+        public ObservableCollection<ModBusOutputVariable>? ProcessingStationModBusOutputVariables { get; } = new ObservableCollection<ModBusOutputVariable>();
 
-        public ProcessingStationViewModel(ModbusClientViewModel modbusClientViewModel, IStationStoreFactory stationStoreFactory,
-            IProcessingStationStore distributingStationStore, IModbusVariableFactory modbusVariableFactory)
+        public ProcessingStationViewModel(ModbusClientViewModel modbusClientViewModel, IProcessingStationStore processingStationStore, IOutputPathStore outputPathStore,
+            IModbusVariableFactory modbusVariableFactory)
         {
             ModbusClientViewModel = modbusClientViewModel;
+            ProcessingStationStore = processingStationStore;
+            OutputPathStore = outputPathStore;
 
-
-            distributingStationStore!.PlcConfiguration = stationStoreFactory.CreatePlcConfiguration("ProcessingStation");
-            DistributingStationModBusInputVariables = modbusVariableFactory.CreateInputVariables(distributingStationStore);
-            DistributingStationModBusOutputVariables = modbusVariableFactory.CreateOutputVariables(distributingStationStore);
-            Listen();
+            ProcessingStationModBusInputVariables = modbusVariableFactory.CreateInputVariables(processingStationStore);
+            ProcessingStationModBusOutputVariables = modbusVariableFactory.CreateOutputVariables(processingStationStore);
         }
 
-        //[RelayCommand]
+        [RelayCommand]
+        private void Stop()
+        {
+            IsListening = false;
+        }
+
+        [RelayCommand]
         private void Listen()
         {
             try
             {
-                DistributingStationModeBusClient = ModbusClientViewModel.ConfigureModBusEntity("192.168.1.30", 504);
-                DistributingStationModeBusClient.Connect();
+                ProcessingStationModeBusClient = ModbusClientViewModel.ConfigureModBusEntity(
+                    ProcessingStationStore.PlcConfiguration!.IpAddress!,
+                    ProcessingStationStore.PlcConfiguration.ModbusPortNumber);
+                ProcessingStationModeBusClient.Connect();
+                IsListening = true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception();
+                Console.WriteLine(ex);
+                ProcessingStationModeBusClient = null;
             }
 
             ReadThread = new Thread(new ThreadStart(ReadRegisters));
             ReadThread.Start();
+        }
 
-            //tWrite = new Thread(new ThreadStart(Write));
-            //tWrite.Start();
+        [RelayCommand]
+        private void Send()
+        {
+            try
+            {
+                ProcessingStationModeBusClient = ModbusClientViewModel.ConfigureModBusEntity(
+                    ProcessingStationStore.PlcConfiguration!.IpAddress!,
+                    ProcessingStationStore.PlcConfiguration.ModbusPortNumber);
+                ProcessingStationModeBusClient.Connect();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                ProcessingStationModeBusClient = null;
+            }
+
+            WriteThread = new Thread(new ThreadStart(WriteRegisters));
+            WriteThread.Start();
         }
 
         private void ReadRegisters()
         {
-            int index = 1;
-
-            using (StreamWriter sw = new StreamWriter
-                (@"C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\Data\ProcessingStation.txt"))
+            try
             {
-                string? header = null;
-
-                foreach (var DistributingStationModBusInputVariable in DistributingStationModBusInputVariables)
+                using (StreamWriter sw = new StreamWriter(OutputPathStore.FilePath! + ProcessingStationStore.PlcConfiguration!.Name))
                 {
-                    if (header is null) header = DistributingStationModBusInputVariable.VariableName + ",";
-                    else header += DistributingStationModBusInputVariable.VariableName + ",";
-                }
+                    string? header = null;
 
-                sw.WriteLine(header);
-
-                while (true)
-                {
-                    string[]? QW = ModbusClientViewModel.ReadValues(DistributingStationModeBusClient, 0, 9);
-
-                    if (QW is not null)
+                    foreach (var modBusInputVariable in ProcessingStationModBusInputVariables!)
                     {
-                        sw.WriteLine(string.Join(",", QW));
+                        if (header is null) header = modBusInputVariable.VariableName + ",";
+                        else header += modBusInputVariable.VariableName + ",";
                     }
 
-                    Thread.Sleep(1000);
-                    index++;
-                    if (index == 600) break;
+                    sw.WriteLine(header);
+
+                    while (IsListening)
+                    {
+                        string[]? QW = ModbusClientViewModel.ReadValues
+                            (ProcessingStationModeBusClient!,
+                            ProcessingStationStore.PlcConfiguration!.StartingAddress,
+                            ProcessingStationStore.PlcConfiguration.NumberOfRegisters);
+
+                        if (QW is not null)
+                        {
+                            sw.WriteLine(string.Join(",", QW));
+                        }
+
+                        Thread.Sleep(1000);
+                    }
                 }
+            }
+            finally
+            {
+                ProcessingStationModeBusClient!.Disconnect();
+                ProcessingStationModeBusClient = null;
+            }
+        }
+
+        private void WriteRegisters()
+        {
+            try
+            {
+                if (ProcessingStationModeBusClient!.Connected)
+                {
+                    int[] writeValues = new int[ProcessingStationModBusOutputVariables!.Count];
+
+                    for (int i = 0; i < ProcessingStationModBusOutputVariables!.Count; i++)
+                    {
+                        writeValues[i] = ProcessingStationModBusOutputVariables[i].ValueToSend ?? 0;
+                    }
+
+                    ProcessingStationModeBusClient.WriteMultipleRegisters(0, writeValues);
+                }
+            }
+            finally
+            {
+                ProcessingStationModeBusClient!.Disconnect();
+                ProcessingStationModeBusClient = null;
             }
         }
     }

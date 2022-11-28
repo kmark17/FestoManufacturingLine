@@ -1,4 +1,5 @@
-﻿using FestoManufacturingLine_ModBus.WPF.State.PlcConfigurations;
+﻿using FestoManufacturingLine_ModBus.WPF.State.OutputPath;
+using FestoManufacturingLine_ModBus.WPF.State.PlcConfigurations;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -15,6 +16,8 @@ namespace FestoManufacturingLine_ModBus.WPF.HostBuilders
         {
             host.ConfigureServices((services) =>
             {
+                services.AddSingleton<IOutputPathStore, OutputPathStore>();
+
                 services.AddSingleton<IDistributingStationStore, DistributingStationStore>();
                 services.AddSingleton<ITestingStationStore, TestingStationStore>();
                 services.AddSingleton<IProcessingStationStore, ProcessingStationStore>();

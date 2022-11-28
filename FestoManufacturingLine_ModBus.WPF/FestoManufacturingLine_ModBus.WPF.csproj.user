@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup />
+  <PropertyGroup>
+    <_LastSelectedProfileId>D:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\Properties\PublishProfiles\ClickOnceProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
   <ItemGroup>
     <ApplicationDefinition Update="App.xaml">
       <SubType>Designer</SubType>
@@ -22,7 +24,7 @@
     <Compile Update="Views\HandlingStationView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\ManufacturingLineOverviewView.xaml.cs">
+    <Compile Update="Views\LandingPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\PickAndPlaceStationView.xaml.cs">
@@ -69,7 +71,7 @@
     <Page Update="Views\HandlingStationView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\ManufacturingLineOverviewView.xaml">
+    <Page Update="Views\LandingPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\PickAndPlaceStationView.xaml">

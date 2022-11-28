@@ -9,10 +9,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Animations\DistributingStation.wmv" />
+    <None Remove="Resources\Animations\FluidicMusclePressStation.wmv" />
+    <None Remove="Resources\Animations\HandlingStation.wmv" />
+    <None Remove="Resources\Animations\PickAndPlaceStation.wmv" />
+    <None Remove="Resources\Animations\ProcessingStation.wmv" />
+    <None Remove="Resources\Animations\SortingStation.wmv" />
+    <None Remove="Resources\Animations\TestingStation.wmv" />
     <None Remove="Resources\Background.jpg" />
     <None Remove="Resources\FestoMLSplashScreen.jpg" />
     <None Remove="Resources\PC.png" />
     <None Remove="Resources\PLC.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Animations\DistributingStation.wmv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Animations\FluidicMusclePressStation.wmv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -31,23 +47,39 @@
 
   <ItemGroup>
     <Reference Include="EasyModbus">
-      <HintPath>..\..\..\EasyModbus.dll</HintPath>
+      <HintPath>..\..\EasyModbus.dll</HintPath>
+      <CopyLocal>True</CopyLocal>
     </Reference>
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Background.jpg">
+    <Content Include="Resources\Animations\HandlingStation.wmv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\FestoMLSplashScreen.jpg">
+    </Content>
+    <Content Include="Resources\Animations\PickAndPlaceStation.wmv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\PC.png">
+    </Content>
+    <Content Include="Resources\Animations\ProcessingStation.wmv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\PLC.png">
+    </Content>
+    <Content Include="Resources\Animations\SortingStation.wmv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </Content>
+    <Content Include="Resources\Animations\TestingStation.wmv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Background.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\FestoMLSplashScreen.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PC.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PLC.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

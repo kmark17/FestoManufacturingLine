@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using EasyModbus;
 using FestoManufacturingLine_ModBus.Domain.Models;
+using FestoManufacturingLine_ModBus.WPF.State.OutputPath;
 using FestoManufacturingLine_ModBus.WPF.State.PlcConfigurations;
 using FestoManufacturingLine_ModBus.WPF.ViewModels.Factories;
 using System;
@@ -17,75 +19,137 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
     public partial class FluidicMusclePressStationViewModel : ViewModelBase
     {
         [ObservableProperty]
-        private bool _isDistributingStationOnline = true;
+        private bool _isFluidicMusclePressStationOnline = false;
+
+        [ObservableProperty]
+        private bool _isListening = true;
+
         private Thread? ReadThread { get; set; }
         private Thread? WriteThread { get; set; }
-        private ModbusClient? DistributingStationModeBusClient { get; set; }
+        private ModbusClient? FluidicMusclePressStationModeBusClient { get; set; }
         private ModbusClientViewModel ModbusClientViewModel { get; }
-        public ObservableCollection<ModBusInputVariable>? DistributingStationModBusInputVariables { get; } = new ObservableCollection<ModBusInputVariable>();
-        public ObservableCollection<ModBusOutputVariable>? DistributingStationModBusOutputVariables { get; } = new ObservableCollection<ModBusOutputVariable>();
+        private IFluidicMusclePressStationStore FluidicMusclePressStationStore { get; set; }
+        private IOutputPathStore OutputPathStore { get; set; }
+        public ObservableCollection<ModBusInputVariable>? FluidicMusclePressStationModBusInputVariables { get; } = new ObservableCollection<ModBusInputVariable>();
+        public ObservableCollection<ModBusOutputVariable>? FluidicMusclePressStationModBusOutputVariables { get; } = new ObservableCollection<ModBusOutputVariable>();
 
-        public FluidicMusclePressStationViewModel(ModbusClientViewModel modbusClientViewModel, IStationStoreFactory stationStoreFactory,
-            IFluidicMusclePressStationStore distributingStationStore, IModbusVariableFactory modbusVariableFactory)
+        public FluidicMusclePressStationViewModel(ModbusClientViewModel modbusClientViewModel, IFluidicMusclePressStationStore fluidicMusclePressStationStore, IOutputPathStore outputPathStore,
+            IModbusVariableFactory modbusVariableFactory)
         {
             ModbusClientViewModel = modbusClientViewModel;
+            FluidicMusclePressStationStore = fluidicMusclePressStationStore;
+            OutputPathStore = outputPathStore;
 
-
-            distributingStationStore!.PlcConfiguration = stationStoreFactory.CreatePlcConfiguration("FluidicMuslcePressStation");
-            DistributingStationModBusInputVariables = modbusVariableFactory.CreateInputVariables(distributingStationStore);
-            DistributingStationModBusOutputVariables = modbusVariableFactory.CreateOutputVariables(distributingStationStore);
-            Listen();
+            FluidicMusclePressStationModBusInputVariables = modbusVariableFactory.CreateInputVariables(fluidicMusclePressStationStore);
+            FluidicMusclePressStationModBusOutputVariables = modbusVariableFactory.CreateOutputVariables(fluidicMusclePressStationStore);
         }
 
-        //[RelayCommand]
+        [RelayCommand]
+        private void Stop()
+        {
+            IsListening = false;
+        }
+
+        [RelayCommand]
         private void Listen()
         {
             try
             {
-                DistributingStationModeBusClient = ModbusClientViewModel.ConfigureModBusEntity("192.168.1.60", 507);
-                DistributingStationModeBusClient.Connect();
+                FluidicMusclePressStationModeBusClient = ModbusClientViewModel.ConfigureModBusEntity(
+                    FluidicMusclePressStationStore.PlcConfiguration!.IpAddress!,
+                    FluidicMusclePressStationStore.PlcConfiguration.ModbusPortNumber);
+                FluidicMusclePressStationModeBusClient.Connect();
+                IsListening = true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception();
+                Console.WriteLine(ex);
+                FluidicMusclePressStationModeBusClient = null;
             }
 
             ReadThread = new Thread(new ThreadStart(ReadRegisters));
             ReadThread.Start();
+        }
 
-            //tWrite = new Thread(new ThreadStart(Write));
-            //tWrite.Start();
+        [RelayCommand]
+        private void Send()
+        {
+            try
+            {
+                FluidicMusclePressStationModeBusClient = ModbusClientViewModel.ConfigureModBusEntity(
+                    FluidicMusclePressStationStore.PlcConfiguration!.IpAddress!,
+                    FluidicMusclePressStationStore.PlcConfiguration.ModbusPortNumber);
+                FluidicMusclePressStationModeBusClient.Connect();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                FluidicMusclePressStationModeBusClient = null;
+            }
+
+            WriteThread = new Thread(new ThreadStart(WriteRegisters));
+            WriteThread.Start();
         }
 
         private void ReadRegisters()
         {
-            int index = 1;
-
-            using (StreamWriter sw = new StreamWriter(@"C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\Data\FluidicMusclePressStation.txt"))
+            try
             {
-                string? header = null;
-
-                foreach (var DistributingStationModBusInputVariable in DistributingStationModBusInputVariables)
+                using (StreamWriter sw = new StreamWriter(OutputPathStore.FilePath! + FluidicMusclePressStationStore.PlcConfiguration!.Name))
                 {
-                    if (header is null) header = DistributingStationModBusInputVariable.VariableName + ",";
-                    else header += DistributingStationModBusInputVariable.VariableName + ",";
-                }
+                    string? header = null;
 
-                sw.WriteLine(header);
-
-                while (true)
-                {
-                    string[]? QW = ModbusClientViewModel.ReadValues(DistributingStationModeBusClient, 0, 8);
-
-                    if (QW is not null)
+                    foreach (var modBusInputVariable in FluidicMusclePressStationModBusInputVariables!)
                     {
-                        sw.WriteLine(string.Join(",", QW));
+                        if (header is null) header = modBusInputVariable.VariableName + ",";
+                        else header += modBusInputVariable.VariableName + ",";
                     }
 
-                    Thread.Sleep(1000);
-                    index++;
-                    if (index == 600) break;
+                    sw.WriteLine(header);
+
+                    while (IsListening)
+                    {
+                        string[]? QW = ModbusClientViewModel.ReadValues
+                            (FluidicMusclePressStationModeBusClient!,
+                            FluidicMusclePressStationStore.PlcConfiguration!.StartingAddress,
+                            FluidicMusclePressStationStore.PlcConfiguration.NumberOfRegisters);
+
+                        if (QW is not null)
+                        {
+                            sw.WriteLine(string.Join(",", QW));
+                        }
+
+                        Thread.Sleep(1000);
+                    }
                 }
+            }
+            finally
+            {
+                FluidicMusclePressStationModeBusClient!.Disconnect();
+                FluidicMusclePressStationModeBusClient = null;
+            }
+        }
+
+        private void WriteRegisters()
+        {
+            try
+            {
+                if (FluidicMusclePressStationModeBusClient!.Connected)
+                {
+                    int[] writeValues = new int[FluidicMusclePressStationModBusOutputVariables!.Count];
+
+                    for (int i = 0; i < FluidicMusclePressStationModBusOutputVariables!.Count; i++)
+                    {
+                        writeValues[i] = FluidicMusclePressStationModBusOutputVariables[i].ValueToSend ?? 0;
+                    }
+
+                    FluidicMusclePressStationModeBusClient.WriteMultipleRegisters(0, writeValues);
+                }
+            }
+            finally
+            {
+                FluidicMusclePressStationModeBusClient!.Disconnect();
+                FluidicMusclePressStationModeBusClient = null;
             }
         }
     }

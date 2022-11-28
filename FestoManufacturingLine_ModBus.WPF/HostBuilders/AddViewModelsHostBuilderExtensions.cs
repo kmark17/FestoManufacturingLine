@@ -1,4 +1,5 @@
-﻿using FestoManufacturingLine_ModBus.WPF.State.PlcConfigurations;
+﻿using FestoManufacturingLine_ModBus.WPF.State.OutputPath;
+using FestoManufacturingLine_ModBus.WPF.State.PlcConfigurations;
 using FestoManufacturingLine_ModBus.WPF.ViewModels;
 using FestoManufacturingLine_ModBus.WPF.ViewModels.Factories;
 using Microsoft.Extensions.Configuration;
@@ -21,7 +22,6 @@ namespace FestoManufacturingLine_ModBus.WPF.HostBuilders
             {
                 services.AddSingleton<MainViewModel>();
                 services.AddSingleton<ModbusClientViewModel>();
-                services.AddSingleton<CreateViewModel<ManufacturingLineOverviewViewModel>>(services => () => CreateManufacturingLineOverviewViewModel(services));
                 services.AddSingleton<CreateViewModel<DistributingStationViewModel>>(services => () => CreateDistributingStationViewModel(services));
                 services.AddSingleton<CreateViewModel<TestingStationViewModel>>(services => () => CreateTestingStationViewModel(services));
                 services.AddSingleton<CreateViewModel<ProcessingStationViewModel>>(services => () => CreateProcessingStationViewModel(services));
@@ -35,17 +35,12 @@ namespace FestoManufacturingLine_ModBus.WPF.HostBuilders
             return host;
         }
 
-        private static ManufacturingLineOverviewViewModel CreateManufacturingLineOverviewViewModel(IServiceProvider services)
-        {
-            return new ManufacturingLineOverviewViewModel();
-        }
-
         private static DistributingStationViewModel CreateDistributingStationViewModel(IServiceProvider services)
         {
             return new DistributingStationViewModel(
                 services.GetRequiredService<ModbusClientViewModel>(),
-                services.GetRequiredService<IStationStoreFactory>(),
                 services.GetRequiredService<IDistributingStationStore>(),
+                services.GetRequiredService<IOutputPathStore>(),
                 services.GetRequiredService<IModbusVariableFactory>());
         }
 
@@ -53,8 +48,8 @@ namespace FestoManufacturingLine_ModBus.WPF.HostBuilders
         {
             return new TestingStationViewModel(
                 services.GetRequiredService<ModbusClientViewModel>(),
-                services.GetRequiredService<IStationStoreFactory>(),
                 services.GetRequiredService<ITestingStationStore>(),
+                services.GetRequiredService<IOutputPathStore>(),
                 services.GetRequiredService<IModbusVariableFactory>());
         }
 
@@ -62,8 +57,8 @@ namespace FestoManufacturingLine_ModBus.WPF.HostBuilders
         {
             return new ProcessingStationViewModel(
                 services.GetRequiredService<ModbusClientViewModel>(),
-                services.GetRequiredService<IStationStoreFactory>(),
                 services.GetRequiredService<IProcessingStationStore>(),
+                services.GetRequiredService<IOutputPathStore>(),
                 services.GetRequiredService<IModbusVariableFactory>());
         }
 
@@ -71,8 +66,8 @@ namespace FestoManufacturingLine_ModBus.WPF.HostBuilders
         {
             return new PickAndPlaceStationViewModel(
                 services.GetRequiredService<ModbusClientViewModel>(),
-                services.GetRequiredService<IStationStoreFactory>(),
                 services.GetRequiredService<IPickAndPlaceStationStore>(),
+                services.GetRequiredService<IOutputPathStore>(),
                 services.GetRequiredService<IModbusVariableFactory>());
         }
 
@@ -80,8 +75,8 @@ namespace FestoManufacturingLine_ModBus.WPF.HostBuilders
         {
             return new HandlingStationViewModel(
                 services.GetRequiredService<ModbusClientViewModel>(),
-                services.GetRequiredService<IStationStoreFactory>(),
                 services.GetRequiredService<IHandlingStationStore>(),
+                services.GetRequiredService<IOutputPathStore>(),
                 services.GetRequiredService<IModbusVariableFactory>());
         }
 
@@ -89,8 +84,8 @@ namespace FestoManufacturingLine_ModBus.WPF.HostBuilders
         {
             return new FluidicMusclePressStationViewModel(
                 services.GetRequiredService<ModbusClientViewModel>(),
-                services.GetRequiredService<IStationStoreFactory>(),
                 services.GetRequiredService<IFluidicMusclePressStationStore>(),
+                services.GetRequiredService<IOutputPathStore>(),
                 services.GetRequiredService<IModbusVariableFactory>());
         }
 
@@ -98,8 +93,8 @@ namespace FestoManufacturingLine_ModBus.WPF.HostBuilders
         {
             return new SortingStationViewModel(
                 services.GetRequiredService<ModbusClientViewModel>(),
-                services.GetRequiredService<IStationStoreFactory>(),
                 services.GetRequiredService<ISortingStationStore>(),
+                services.GetRequiredService<IOutputPathStore>(),
                 services.GetRequiredService<IModbusVariableFactory>());
         }
 

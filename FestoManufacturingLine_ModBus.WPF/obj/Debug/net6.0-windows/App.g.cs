@@ -19,6 +19,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Controls.Ribbon;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms.Integration;
 using System.Windows.Ink;
 using System.Windows.Input;
 using System.Windows.Markup;
@@ -47,7 +48,7 @@ namespace FestoManufacturingLine_ModBus.WPF {
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.10.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.11.0")]
         public void InitializeComponent() {
             if (_contentLoaded) {
                 return;
@@ -67,7 +68,7 @@ namespace FestoManufacturingLine_ModBus.WPF {
         /// </summary>
         [System.STAThreadAttribute()]
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.10.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "6.0.11.0")]
         public static void Main() {
             FestoManufacturingLine_ModBus.WPF.App app = new FestoManufacturingLine_ModBus.WPF.App();
             app.InitializeComponent();
