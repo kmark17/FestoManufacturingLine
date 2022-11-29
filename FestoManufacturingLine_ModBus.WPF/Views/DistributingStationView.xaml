@@ -15,13 +15,16 @@
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
         <Grid Background="#90101010">
             <controls:PlcDetails
                 Margin="10"
+                IsListening="{Binding IsListening}"
                 IsStationOnline="{Binding IsDistributingStationOnline}"
                 SendValues="{Binding SendCommand}"
-                IsListening="{Binding IsListening}"
                 StartRecordingValues="{Binding ListenCommand}"
                 StationDescription="The distributing station is the first station in the line in which the workpieces are dispatched from the container. The workpiece gets placed onto the next station with the help of a pneumatic rotational mechanism mounted with a vacuum gripper."
                 StationModBusInputVariables="{Binding DistributingStationModBusInputVariables}"

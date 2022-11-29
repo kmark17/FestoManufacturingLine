@@ -8,7 +8,6 @@ C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab proje
 C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\Views\DistributingStationView.g.cs
 C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\Views\FluidicMusclePressStationView.g.cs
 C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\Views\HandlingStationView.g.cs
-C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\Views\ManufacturingLineOverviewView.g.cs
 C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\Views\PickAndPlaceStationView.g.cs
 C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\Views\ProcessingStationView.g.cs
 C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\Views\SettingsView.g.cs
@@ -117,7 +116,6 @@ C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab proje
 C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\Views\DistributingStationView.baml
 C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\Views\FluidicMusclePressStationView.baml
 C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\Views\HandlingStationView.baml
-C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\Views\ManufacturingLineOverviewView.baml
 C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\Views\PickAndPlaceStationView.baml
 C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\Views\ProcessingStationView.baml
 C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\Views\SettingsView.baml
@@ -280,3 +278,19 @@ D:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFact
 D:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\ref\FestoManufacturingLine_ModBus.WPF.dll
 D:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\FestoManufacturingLine_ModBus.WPF.pdb
 D:\RENDSZER\Dokumentumok\Egyetemi JEGYZETEK\Proginf_msc\3rd_semester\DigitalFactoryLab\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\FestoManufacturingLine_ModBus.WPF.genruntimeconfig.cache
+C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\bin\Debug\net6.0-windows\Resources\Animations\DistributingStation.wmv
+C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\bin\Debug\net6.0-windows\Resources\Animations\FluidicMusclePressStation.wmv
+C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\bin\Debug\net6.0-windows\Resources\Animations\HandlingStation.wmv
+C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\bin\Debug\net6.0-windows\Resources\Animations\PickAndPlaceStation.wmv
+C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\bin\Debug\net6.0-windows\Resources\Animations\ProcessingStation.wmv
+C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\bin\Debug\net6.0-windows\Resources\Animations\SortingStation.wmv
+C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\bin\Debug\net6.0-windows\Resources\Animations\TestingStation.wmv
+C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\bin\Debug\net6.0-windows\Resources\Background.jpg
+C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\bin\Debug\net6.0-windows\Resources\FestoMLSplashScreen.jpg
+C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\bin\Debug\net6.0-windows\Resources\PC.png
+C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\bin\Debug\net6.0-windows\Resources\PLC.png
+C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\bin\Debug\net6.0-windows\ffme.win.dll
+C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\bin\Debug\net6.0-windows\FFmpeg.AutoGen.dll
+C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\Views\LandingPage.g.cs
+C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\FestoManufacturingLine_ModBus.WPF_Content.g.cs
+C:\Users\ee2805\OneDrive - tdkgroup\Dokumentumok\Egyetem\DigitalFactoryLab project\FestoManufacturingLine_ModBus\FestoManufacturingLine_ModBus.WPF\obj\Debug\net6.0-windows\Views\LandingPage.baml

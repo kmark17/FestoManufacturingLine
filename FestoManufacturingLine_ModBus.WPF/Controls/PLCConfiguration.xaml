@@ -18,7 +18,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
-            <RowDefinition Height="100" />
+            <RowDefinition Height="75" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
@@ -27,7 +27,7 @@
             Grid.ColumnSpan="3"
             Margin="0,0,0,25"
             HorizontalAlignment="Center"
-            Content="Distributing station"
+            Content="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=StationName}"
             FontSize="24"
             FontWeight="Bold" />
 
@@ -36,9 +36,9 @@
         <Line
             Grid.Row="1"
             Grid.Column="1"
-            Stroke="ForestGreen"
+            Stroke="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=StationState}"
             StrokeThickness="4"
-            X1="-28"
+            X1="-20.5"
             X2="300"
             Y1="50"
             Y2="50" />
@@ -61,6 +61,7 @@
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
 
                 <Label
@@ -72,7 +73,7 @@
                 <Label
                     Grid.Column="1"
                     HorizontalAlignment="Center"
-                    Content="CECC-D"
+                    Content="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=PlcName}"
                     FontSize="16" />
 
                 <Label
@@ -86,7 +87,7 @@
                     Grid.Row="1"
                     Grid.Column="1"
                     HorizontalAlignment="Center"
-                    Content="CECC-D"
+                    Content="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=Type}"
                     FontSize="16" />
 
                 <Label
@@ -100,7 +101,7 @@
                     Grid.Row="2"
                     Grid.Column="1"
                     HorizontalAlignment="Center"
-                    Content="CECC-D"
+                    Content="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=Id}"
                     FontSize="16" />
 
                 <Label
@@ -114,7 +115,7 @@
                     Grid.Row="3"
                     Grid.Column="1"
                     HorizontalAlignment="Center"
-                    Content="CECC-D"
+                    Content="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=Version}"
                     FontSize="16" />
 
                 <Label
@@ -128,7 +129,7 @@
                     Grid.Row="4"
                     Grid.Column="1"
                     HorizontalAlignment="Center"
-                    Content="CECC-D"
+                    Content="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=ModelNumber}"
                     FontSize="16" />
 
                 <Label
@@ -144,9 +145,24 @@
                     Grid.Column="1"
                     Width="150"
                     Margin="15,5,0,0"
-                    mah:TextBoxHelper.Watermark="192.168.1.10"
+                    mah:TextBoxHelper.Watermark="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=IpAddress}"
                     FontSize="16" />
 
+                <Label
+                    Grid.Row="6"
+                    Margin="0,5,0,0"
+                    HorizontalAlignment="Right"
+                    Content="Modbus Port Nr.:"
+                    FontSize="16"
+                    FontWeight="Bold" />
+
+                <TextBox
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    Width="150"
+                    Margin="15,5,0,0"
+                    mah:TextBoxHelper.Watermark="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=PortNumber}"
+                    FontSize="16" />
             </Grid>
 
 
@@ -157,6 +173,7 @@
             Width="100"
             Margin="0,15,0,0"
             HorizontalAlignment="Right"
+            Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=SavePlcConfigurationCommand}"
             Content="Save"
             FontSize="14" />
     </Grid>

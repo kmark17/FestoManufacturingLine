@@ -100,7 +100,14 @@ namespace FestoManufacturingLine_ModBus.WPF.HostBuilders
 
         private static SettingsViewModel CreateSettingsViewModel(IServiceProvider services)
         {
-            return new SettingsViewModel();
+            return new SettingsViewModel(
+                services.GetRequiredService<IDistributingStationStore>(),
+                services.GetRequiredService<ITestingStationStore>(),
+                services.GetRequiredService<IProcessingStationStore>(),
+                services.GetRequiredService<IPickAndPlaceStationStore>(),
+                services.GetRequiredService<IHandlingStationStore>(),
+                services.GetRequiredService<IFluidicMusclePressStationStore>(),
+                services.GetRequiredService<ISortingStationStore>());
         }
     }
 }

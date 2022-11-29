@@ -127,6 +127,8 @@ namespace FestoManufacturingLine_ModBus.WPF.Controls
         public PlcDetails()
         {
             InitializeComponent();
+
+            detailsScrollViewer.MaxHeight = SystemParameters.PrimaryScreenHeight - 100;
         }
     }
 }

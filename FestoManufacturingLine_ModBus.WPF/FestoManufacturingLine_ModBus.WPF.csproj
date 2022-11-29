@@ -46,13 +46,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="EasyModbus">
-      <HintPath>..\..\EasyModbus.dll</HintPath>
-      <CopyLocal>True</CopyLocal>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="Resources\Animations\HandlingStation.wmv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -80,6 +73,12 @@
     <Content Include="Resources\PLC.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="EasyModbus">
+      <HintPath>..\..\..\EasyModbus.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

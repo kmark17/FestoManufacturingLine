@@ -23,7 +23,7 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
         private bool _isDistributingStationOnline;
 
         [ObservableProperty]
-        private bool _isListening = true;
+        private bool _isListening = false;
 
         private Thread? ReadThread { get; set; }
         private Thread? WriteThread { get; set; }

@@ -18,7 +18,11 @@
         </Grid.RowDefinitions>
 
         <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal">
-            <controls:PlcConfiguration Margin="30" />
+            <controls:PlcConfiguration
+                Margin="30"
+                IpAddress="{Binding DistributingStationStore.PlcConfiguration.IpAddress}"
+                PortNumber="{Binding DistributingStationStore.PlcConfiguration.ModbusPortNumber}"
+                StationName="{Binding Path=DistributingStationStore.PlcConfiguration.Name}" />
             <controls:PlcConfiguration Margin="30" />
             <controls:PlcConfiguration Margin="30" />
             <controls:PlcConfiguration Margin="30" />
