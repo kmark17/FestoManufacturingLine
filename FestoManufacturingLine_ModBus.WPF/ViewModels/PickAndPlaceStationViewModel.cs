@@ -40,6 +40,8 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
             PickAndPlaceStationStore = pickAndPlaceStationStore;
             OutputPathStore = outputPathStore;
 
+            IsPickAndPlaceStationOnline = pickAndPlaceStationStore.PlcConfiguration!.IsStationOnline;
+
             PickAndPlaceStationModBusInputVariables = modbusVariableFactory.CreateInputVariables(pickAndPlaceStationStore);
             PickAndPlaceStationModBusOutputVariables = modbusVariableFactory.CreateOutputVariables(pickAndPlaceStationStore);
         }

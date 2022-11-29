@@ -5,8 +5,9 @@
     xmlns:controls="clr-namespace:FestoManufacturingLine_ModBus.WPF.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:FestoManufacturingLine_ModBus.WPF.Views"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="700"
+    d:DesignHeight="2000"
     d:DesignWidth="1200"
     mc:Ignorable="d">
     <Grid>
@@ -20,15 +21,81 @@
         <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal">
             <controls:PlcConfiguration
                 Margin="30"
+                Id="103D 9C43"
                 IpAddress="{Binding DistributingStationStore.PlcConfiguration.IpAddress}"
+                IsStationOnline="{Binding DistributingStationStore.PlcConfiguration.IsStationOnline}"
+                ModelNumber="574415"
+                PlcName="CECC-D"
                 PortNumber="{Binding DistributingStationStore.PlcConfiguration.ModbusPortNumber}"
-                StationName="{Binding Path=DistributingStationStore.PlcConfiguration.Name}" />
-            <controls:PlcConfiguration Margin="30" />
-            <controls:PlcConfiguration Margin="30" />
-            <controls:PlcConfiguration Margin="30" />
-            <controls:PlcConfiguration Margin="30" />
-            <controls:PlcConfiguration Margin="30" />
-            <controls:PlcConfiguration Margin="30" />
+                StationName="{Binding DistributingStationStore.PlcConfiguration.Name}"
+                Type="4096"
+                Version="3.5.4.0" />
+            <controls:PlcConfiguration
+                Margin="30"
+                Id="103D 9C43"
+                IpAddress="{Binding TestingStationStore.PlcConfiguration.IpAddress}"
+                IsStationOnline="{Binding TestingStationStore.PlcConfiguration.IsStationOnline}"
+                ModelNumber="574415"
+                PlcName="CECC-D"
+                PortNumber="{Binding TestingStationStore.PlcConfiguration.ModbusPortNumber}"
+                StationName="{Binding TestingStationStore.PlcConfiguration.Name}"
+                Type="4096"
+                Version="3.5.4.0" />
+            <controls:PlcConfiguration
+                Margin="30"
+                Id="103D 9C43"
+                IpAddress="{Binding ProcessingStationStore.PlcConfiguration.IpAddress}"
+                IsStationOnline="{Binding ProcessingStationStore.PlcConfiguration.IsStationOnline}"
+                ModelNumber="574415"
+                PlcName="CECC-D"
+                PortNumber="{Binding ProcessingStationStore.PlcConfiguration.ModbusPortNumber}"
+                StationName="{Binding ProcessingStationStore.PlcConfiguration.Name}"
+                Type="4096"
+                Version="3.5.4.0" />
+            <controls:PlcConfiguration
+                Margin="30"
+                Id="103D 9C43"
+                IpAddress="{Binding PickAndPlaceStationStore.PlcConfiguration.IpAddress}"
+                IsStationOnline="{Binding PickAndPlaceStationStore.PlcConfiguration.IsStationOnline}"
+                ModelNumber="574415"
+                PlcName="CECC-D"
+                PortNumber="{Binding PickAndPlaceStationStore.PlcConfiguration.ModbusPortNumber}"
+                StationName="{Binding PickAndPlaceStationStore.PlcConfiguration.Name}"
+                Type="4096"
+                Version="3.5.4.0" />
+            <controls:PlcConfiguration
+                Margin="30"
+                Id="103D 9C43"
+                IpAddress="{Binding HandlingStationStore.PlcConfiguration.IpAddress}"
+                IsStationOnline="{Binding HandlingStationStore.PlcConfiguration.IsStationOnline}"
+                ModelNumber="574415"
+                PlcName="CECC-D"
+                PortNumber="{Binding HandlingStationStore.PlcConfiguration.ModbusPortNumber}"
+                StationName="{Binding HandlingStationStore.PlcConfiguration.Name}"
+                Type="4096"
+                Version="3.5.4.0" />
+            <controls:PlcConfiguration
+                Margin="30"
+                Id="103D 9C43"
+                IpAddress="{Binding FluidicMusclePressStationStore.PlcConfiguration.IpAddress}"
+                IsStationOnline="{Binding FluidicMusclePressStationStore.PlcConfiguration.IsStationOnline}"
+                ModelNumber="574415"
+                PlcName="CECC-D"
+                PortNumber="{Binding FluidicMusclePressStationStore.PlcConfiguration.ModbusPortNumber}"
+                StationName="{Binding FluidicMusclePressStationStore.PlcConfiguration.Name}"
+                Type="4096"
+                Version="3.5.4.0" />
+            <controls:PlcConfiguration
+                Margin="30"
+                Id="103D 9C43"
+                IpAddress="{Binding SortingStationStore.PlcConfiguration.IpAddress}"
+                IsStationOnline="{Binding SortingStationStore.PlcConfiguration.IsStationOnline}"
+                ModelNumber="574415"
+                PlcName="CECC-D"
+                PortNumber="{Binding SortingStationStore.PlcConfiguration.ModbusPortNumber}"
+                StationName="{Binding SortingStationStore.PlcConfiguration.Name}"
+                Type="4096"
+                Version="3.5.4.0" />
         </WrapPanel>
     </Grid>
 </UserControl>

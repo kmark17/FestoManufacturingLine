@@ -35,7 +35,6 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
             ISortingStationStore sortingStationStore)
         {
             DistributingStationStore = distributingStationStore;
-            
             TestingStationStore = testingStationStore;
             ProcessingStationStore = processingStationStore;
             PickAndPlaceStationStore = pickAndPlaceStationStore;

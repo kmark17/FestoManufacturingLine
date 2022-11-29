@@ -9,7 +9,7 @@
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views="clr-namespace:FestoManufacturingLine_ModBus.WPF.Views"
-    Title="FESTO Manufacturing Line GUI"
+    Title="FESTO Manufacturing Line User Interface"
     Width="800"
     Height="800"
     TitleCharacterCasing="Normal"
@@ -67,7 +67,7 @@
         <mah:HamburgerMenu.ItemsSource>
             <mah:HamburgerMenuItemCollection>
 
-                <mah:HamburgerMenuIconItem Icon="{iconPacks:Material Kind=DistributeVerticalBottom}" Label="Application overview">
+                <mah:HamburgerMenuIconItem Icon="{iconPacks:SimpleIcons Kind=DarkReader}" Label="Application overview">
                     <mah:HamburgerMenuIconItem.Tag>
                         <views:LandingPage />
                     </mah:HamburgerMenuIconItem.Tag>

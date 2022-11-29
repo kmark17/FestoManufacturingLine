@@ -40,6 +40,8 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
             FluidicMusclePressStationStore = fluidicMusclePressStationStore;
             OutputPathStore = outputPathStore;
 
+            IsFluidicMusclePressStationOnline = fluidicMusclePressStationStore.PlcConfiguration!.IsStationOnline;
+
             FluidicMusclePressStationModBusInputVariables = modbusVariableFactory.CreateInputVariables(fluidicMusclePressStationStore);
             FluidicMusclePressStationModBusOutputVariables = modbusVariableFactory.CreateOutputVariables(fluidicMusclePressStationStore);
         }

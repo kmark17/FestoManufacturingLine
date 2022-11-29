@@ -30,13 +30,13 @@ namespace FestoManufacturingLine_ModBus.WPF.Controls
             set { SetValue(StationNameProperty, value); }
         }
 
-        public static readonly DependencyProperty StationStateProperty =
-           DependencyProperty.Register("StationState", typeof(string), typeof(PlcConfiguration), new PropertyMetadata(string.Empty));
+        public static readonly DependencyProperty IsStationOnlineProperty =
+           DependencyProperty.Register("IsStationOnline", typeof(bool), typeof(PlcConfiguration), new PropertyMetadata(false));
 
-        public string StationState
+        public bool IsStationOnline
         {
-            get { return (string)GetValue(StationStateProperty); }
-            set { SetValue(StationStateProperty, value); }
+            get { return (bool)GetValue(IsStationOnlineProperty); }
+            set { SetValue(IsStationOnlineProperty, value); }
         }
 
         public static readonly DependencyProperty PlcNameProperty =
@@ -114,6 +114,11 @@ namespace FestoManufacturingLine_ModBus.WPF.Controls
         public PlcConfiguration()
         {
             InitializeComponent();
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            plcStatusLine.Stroke = IsStationOnline ? new SolidColorBrush(Colors.DarkGreen) : new SolidColorBrush(Colors.Gray);
         }
     }
 }

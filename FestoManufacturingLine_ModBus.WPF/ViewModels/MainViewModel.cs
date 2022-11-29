@@ -41,7 +41,7 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
             sortingStationStore!.PlcConfiguration = stationStoreFactory.CreatePlcConfiguration("SortingStation");
 
             // Default output file path.
-            outputPathStore.FilePath = @"C:\";
+            outputPathStore.FilePath = @"C:\FestoManufacturingLine\";
 
             // Create ViewModels
             DistributingStationViewModel = viewModelFactory.CreateViewModel(ViewType.Distributing) as DistributingStationViewModel;

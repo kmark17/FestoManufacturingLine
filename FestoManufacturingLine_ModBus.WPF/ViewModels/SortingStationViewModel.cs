@@ -40,6 +40,8 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
             SortingStationStore = sortingStationStore;
             OutputPathStore = outputPathStore;
 
+            IsSortingStationOnline = sortingStationStore.PlcConfiguration!.IsStationOnline;
+
             SortingStationModBusInputVariables = modbusVariableFactory.CreateInputVariables(sortingStationStore);
             SortingStationModBusOutputVariables = modbusVariableFactory.CreateOutputVariables(sortingStationStore);
         }
