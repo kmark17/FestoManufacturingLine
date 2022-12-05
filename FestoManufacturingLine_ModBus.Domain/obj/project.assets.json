@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
+      "CommunityToolkit.Mvvm/8.1.0-preview1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/CommunityToolkit.Mvvm.dll": {}
+        },
+        "build": {
+          "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
       "FFME.Windows/4.4.350": {
         "type": "package",
         "dependencies": {
@@ -538,6 +550,35 @@
     }
   },
   "libraries": {
+    "CommunityToolkit.Mvvm/8.1.0-preview1": {
+      "sha512": "b0L1XGSFmrorXFXn8gAynHx5GVmmUMZyJx1/9xWOO+Dn7VTZInl02ilLPTwwHqXHxttQI2oxx0UyFWfgXpMi8Q==",
+      "type": "package",
+      "path": "communitytoolkit.mvvm/8.1.0-preview1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "License.md",
+        "ThirdPartyNotices.txt",
+        "analyzers/dotnet/roslyn4.0/cs/CommunityToolkit.Mvvm.SourceGenerators.dll",
+        "analyzers/dotnet/roslyn4.3/cs/CommunityToolkit.Mvvm.SourceGenerators.dll",
+        "build/netstandard2.0/CommunityToolkit.Mvvm.targets",
+        "build/netstandard2.1/CommunityToolkit.Mvvm.targets",
+        "buildTransitive/netstandard2.0/CommunityToolkit.Mvvm.targets",
+        "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets",
+        "communitytoolkit.mvvm.8.1.0-preview1.nupkg.sha512",
+        "communitytoolkit.mvvm.nuspec",
+        "lib/net6.0/CommunityToolkit.Mvvm.dll",
+        "lib/net6.0/CommunityToolkit.Mvvm.pdb",
+        "lib/net6.0/CommunityToolkit.Mvvm.xml",
+        "lib/netstandard2.0/CommunityToolkit.Mvvm.dll",
+        "lib/netstandard2.0/CommunityToolkit.Mvvm.pdb",
+        "lib/netstandard2.0/CommunityToolkit.Mvvm.xml",
+        "lib/netstandard2.1/CommunityToolkit.Mvvm.dll",
+        "lib/netstandard2.1/CommunityToolkit.Mvvm.pdb",
+        "lib/netstandard2.1/CommunityToolkit.Mvvm.xml"
+      ]
+    },
     "FFME.Windows/4.4.350": {
       "sha512": "I5cuudTPFrk10H4J89R124HGjEw2Dbivsmt1mrfDPSdXL5t4MbYeCAt1aa2tC5cU22VvqwRpv4vWHVPU4y8GIg==",
       "type": "package",
@@ -1479,6 +1520,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "CommunityToolkit.Mvvm >= 8.1.0-preview1",
       "FFME.Windows >= 4.4.350",
       "Microsoft.Extensions.Hosting >= 7.0.0"
     ]
@@ -1527,6 +1569,10 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
+          "CommunityToolkit.Mvvm": {
+            "target": "Package",
+            "version": "[8.1.0-preview1, )"
+          },
           "FFME.Windows": {
             "target": "Package",
             "version": "[4.4.350, )"

@@ -33,8 +33,7 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
         public ObservableCollection<ModBusInputVariable>? PickAndPlaceStationModBusInputVariables { get; } = new ObservableCollection<ModBusInputVariable>();
         public ObservableCollection<ModBusOutputVariable>? PickAndPlaceStationModBusOutputVariables { get; } = new ObservableCollection<ModBusOutputVariable>();
 
-        public PickAndPlaceStationViewModel(ModbusClientViewModel modbusClientViewModel, IPickAndPlaceStationStore pickAndPlaceStationStore, IOutputPathStore outputPathStore,
-            IModbusVariableFactory modbusVariableFactory)
+        public PickAndPlaceStationViewModel(ModbusClientViewModel modbusClientViewModel, IPickAndPlaceStationStore pickAndPlaceStationStore, IOutputPathStore outputPathStore)
         {
             ModbusClientViewModel = modbusClientViewModel;
             PickAndPlaceStationStore = pickAndPlaceStationStore;
@@ -42,8 +41,8 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
 
             IsPickAndPlaceStationOnline = pickAndPlaceStationStore.PlcConfiguration!.IsStationOnline;
 
-            PickAndPlaceStationModBusInputVariables = modbusVariableFactory.CreateInputVariables(pickAndPlaceStationStore);
-            PickAndPlaceStationModBusOutputVariables = modbusVariableFactory.CreateOutputVariables(pickAndPlaceStationStore);
+            PickAndPlaceStationModBusInputVariables = modbusClientViewModel.CreateInputVariables(pickAndPlaceStationStore);
+            PickAndPlaceStationModBusOutputVariables = modbusClientViewModel.CreateOutputVariables(pickAndPlaceStationStore);
         }
 
         [RelayCommand]

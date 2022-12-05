@@ -33,8 +33,7 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
         public ObservableCollection<ModBusInputVariable>? ProcessingStationModBusInputVariables { get; } = new ObservableCollection<ModBusInputVariable>();
         public ObservableCollection<ModBusOutputVariable>? ProcessingStationModBusOutputVariables { get; } = new ObservableCollection<ModBusOutputVariable>();
 
-        public ProcessingStationViewModel(ModbusClientViewModel modbusClientViewModel, IProcessingStationStore processingStationStore, IOutputPathStore outputPathStore,
-            IModbusVariableFactory modbusVariableFactory)
+        public ProcessingStationViewModel(ModbusClientViewModel modbusClientViewModel, IProcessingStationStore processingStationStore, IOutputPathStore outputPathStore)
         {
             ModbusClientViewModel = modbusClientViewModel;
             ProcessingStationStore = processingStationStore;
@@ -42,8 +41,8 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
 
             IsProcessingStationOnline = processingStationStore.PlcConfiguration!.IsStationOnline;
 
-            ProcessingStationModBusInputVariables = modbusVariableFactory.CreateInputVariables(processingStationStore);
-            ProcessingStationModBusOutputVariables = modbusVariableFactory.CreateOutputVariables(processingStationStore);
+            ProcessingStationModBusInputVariables = modbusClientViewModel.CreateInputVariables(processingStationStore);
+            ProcessingStationModBusOutputVariables = modbusClientViewModel.CreateOutputVariables(processingStationStore);
         }
 
         [RelayCommand]

@@ -46,14 +46,6 @@
                     The application is open source, anyone is free to use it for any purposes.</TextBlock>
             </StackPanel>
 
-            <!--<Button
-                Command="{x:Static viewModels:MainViewModel.OpenUrlCommand}"
-                CommandParameter="https://github.com/MahApps/MahApps.Metro.IconPacks"
-                Content="{iconPacks:Modern SocialGithubOctocat,
-                                           Width=22,
-                                           Height=22}"
-                ToolTip="IconPacks.Browser on GitHub" />-->
-
             <WrapPanel HorizontalAlignment="Right">
                 <iconPacks:PackIconFontisto
                     VerticalAlignment="Center"
@@ -63,12 +55,13 @@
                 <Label VerticalAlignment="Center" Content="kissmark0517@gmail.com" />
 
                 <Button
+                    x:Name="githubButton"
                     Width="45"
                     Height="45"
                     Margin="0,0,150,0"
                     Background="Transparent"
                     BorderThickness="0"
-                    CommandParameter="https://github.com/MahApps/MahApps.Metro.IconPacks"
+                    Click="GithubButton_Click"
                     Content="{iconPacks:Modern SocialGithubOctocat,
                                                Width=25,
                                                Height=25}"

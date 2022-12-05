@@ -53,6 +53,7 @@
                 Margin="30"
                 MediaEnded="stationAnimationMediaElement_MediaEnded"
                 Source="/Resources/Animations/ProcessingStation.wmv"
+                ToolTip="Source: FESTO CIROS Software"
                 UnloadedBehavior="Manual" />
         </StackPanel>
     </Grid>

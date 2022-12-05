@@ -33,8 +33,7 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
         public ObservableCollection<ModBusInputVariable>? FluidicMusclePressStationModBusInputVariables { get; } = new ObservableCollection<ModBusInputVariable>();
         public ObservableCollection<ModBusOutputVariable>? FluidicMusclePressStationModBusOutputVariables { get; } = new ObservableCollection<ModBusOutputVariable>();
 
-        public FluidicMusclePressStationViewModel(ModbusClientViewModel modbusClientViewModel, IFluidicMusclePressStationStore fluidicMusclePressStationStore, IOutputPathStore outputPathStore,
-            IModbusVariableFactory modbusVariableFactory)
+        public FluidicMusclePressStationViewModel(ModbusClientViewModel modbusClientViewModel, IFluidicMusclePressStationStore fluidicMusclePressStationStore, IOutputPathStore outputPathStore)
         {
             ModbusClientViewModel = modbusClientViewModel;
             FluidicMusclePressStationStore = fluidicMusclePressStationStore;
@@ -42,8 +41,8 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
 
             IsFluidicMusclePressStationOnline = fluidicMusclePressStationStore.PlcConfiguration!.IsStationOnline;
 
-            FluidicMusclePressStationModBusInputVariables = modbusVariableFactory.CreateInputVariables(fluidicMusclePressStationStore);
-            FluidicMusclePressStationModBusOutputVariables = modbusVariableFactory.CreateOutputVariables(fluidicMusclePressStationStore);
+            FluidicMusclePressStationModBusInputVariables = modbusClientViewModel.CreateInputVariables(fluidicMusclePressStationStore);
+            FluidicMusclePressStationModBusOutputVariables = modbusClientViewModel.CreateOutputVariables(fluidicMusclePressStationStore);
         }
 
         [RelayCommand]

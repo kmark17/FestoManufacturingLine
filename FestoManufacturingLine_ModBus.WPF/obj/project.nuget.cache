@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "pUYG87YnFHvuNfVLLGuLc0S+AJt1LWDxLl6Lje1eNAOBcT/o7Bdom+mu4AD+bmCPpRXznKCFchAolRL0LuwFUA==",
+  "dgSpecHash": "RJN2xYtLZwzRjw3zeanG5gntVF9oqZu9XgIqOc4lzLIMLHR960jHWFbUnUQb5irqzsvfmTsDDr4dyI4mebO2Fg==",
   "success": true,
   "projectFilePath": "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\FestoManufacturingLine_ModBus.WPF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\calcbinding\\2.5.2\\calcbinding.2.5.2.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\communitytoolkit.mvvm\\8.0.0\\communitytoolkit.mvvm.8.0.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\communitytoolkit.mvvm\\8.1.0-preview1\\communitytoolkit.mvvm.8.1.0-preview1.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\dynamicexpresso.core\\2.3.1\\dynamicexpresso.core.2.3.1.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\ffme.windows\\4.4.350\\ffme.windows.4.4.350.nupkg.sha512",

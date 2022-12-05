@@ -20,9 +20,11 @@ namespace FestoManufacturingLine_ModBus.WPF
     /// </summary>
     public partial class StartUpWindow : MetroWindow
     {
-        public StartUpWindow()
+        public StartUpWindow(object dataContext)
         {
             InitializeComponent();
+
+            DataContext = dataContext;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,17 @@ namespace FestoManufacturingLine_ModBus.WPF.Views
         public LandingPage()
         {
             InitializeComponent();
+        }
+
+        private void GithubButton_Click(object sender, RoutedEventArgs e)
+        {
+            // UseShellExecute is default to false on .NET Core while true on .NET Framework.
+            // Only this value is set to true, the url link can be opened.
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://github.com/kmark17/FestoManufacturingLine",
+                UseShellExecute = true
+            });
         }
     }
 }

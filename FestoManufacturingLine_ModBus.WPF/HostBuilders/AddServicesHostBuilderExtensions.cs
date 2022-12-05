@@ -17,7 +17,6 @@ namespace FestoManufacturingLine_ModBus.WPF.HostBuilders
             {
                 services.AddSingleton<IViewModelFactory, ViewModelFactory>();
                 services.AddSingleton<IStationStoreFactory, StationStoreFactory>();
-                services.AddSingleton<IModbusVariableFactory, ModbusVariableFactory>();
             });
 
             return host;

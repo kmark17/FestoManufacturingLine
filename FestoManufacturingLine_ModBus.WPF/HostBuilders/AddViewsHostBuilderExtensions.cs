@@ -15,7 +15,7 @@ namespace FestoManufacturingLine_ModBus.WPF.HostBuilders
         {
             host.ConfigureServices(services =>
             {
-                services.AddSingleton<StartUpWindow>(s => new StartUpWindow());
+                services.AddSingleton<StartUpWindow>(s => new StartUpWindow(s.GetRequiredService<StartupViewModel>()));
                 services.AddSingleton<MainWindow>(s => new MainWindow(s.GetRequiredService<MainViewModel>()));
             });
 

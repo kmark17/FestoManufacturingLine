@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "03uJaEsUGbhs6+zFs9HlLwzVPTzcuAO/A38F0u1kWLYV5+ScIfl2R58Ar1KPBPd3yiTF/G4Tv3WVU0kf2w0elA==",
+  "dgSpecHash": "fxy0IF1afjArZ5Q0LSdVtMNinA4/Aj1o8o/5yADYq2POLMiAd+wB9zwOnS0ly17/QKzYgReXJxyaN9ximgEX/g==",
   "success": true,
   "projectFilePath": "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.Domain\\FestoManufacturingLine_ModBus.Domain.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\USER\\.nuget\\packages\\communitytoolkit.mvvm\\8.1.0-preview1\\communitytoolkit.mvvm.8.1.0-preview1.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\ffme.windows\\4.4.350\\ffme.windows.4.4.350.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\ffmpeg.autogen\\4.4.0\\ffmpeg.autogen.4.4.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",

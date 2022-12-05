@@ -22,26 +22,9 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
         public SortingStationViewModel? SortingStationViewModel { get; }
         public SettingsViewModel? SettingsViewModel { get; }
 
-        public MainViewModel(IViewModelFactory viewModelFactory, IStationStoreFactory stationStoreFactory, IDistributingStationStore distributingStationStore,
-            ITestingStationStore testingStationStore, IProcessingStationStore processingStationStore, IPickAndPlaceStationStore pickAndPlaceStationStore,
-            IHandlingStationStore handlingStationStore, IFluidicMusclePressStationStore fluidicMusclePressStationStore, ISortingStationStore sortingStationStore,
-            IOutputPathStore outputPathStore)
+        public MainViewModel(IViewModelFactory viewModelFactory)
         {
-            // Create Stores
-            // Order here does matter, as sotres are used in viewmodels andthey must be
-            // created first,otherwiese the program would crash because of null reference.
-            // As every sotre object is registered as a singleton, they going to be only one
-            // object throughout the life of the application.
-            distributingStationStore!.PlcConfiguration = stationStoreFactory.CreatePlcConfiguration("DistributingStation");
-            testingStationStore!.PlcConfiguration = stationStoreFactory.CreatePlcConfiguration("TestingStation");
-            processingStationStore!.PlcConfiguration = stationStoreFactory.CreatePlcConfiguration("ProcessingStation");
-            pickAndPlaceStationStore!.PlcConfiguration = stationStoreFactory.CreatePlcConfiguration("PickAndPlaceStation");
-            handlingStationStore!.PlcConfiguration = stationStoreFactory.CreatePlcConfiguration("HandlingStation");
-            fluidicMusclePressStationStore!.PlcConfiguration = stationStoreFactory.CreatePlcConfiguration("FluidicMusclePressStation");
-            sortingStationStore!.PlcConfiguration = stationStoreFactory.CreatePlcConfiguration("SortingStation");
-
-            // Default output file path.
-            outputPathStore.FilePath = @"C:\FestoManufacturingLine\";
+            
 
             // Create ViewModels
             DistributingStationViewModel = viewModelFactory.CreateViewModel(ViewType.Distributing) as DistributingStationViewModel;

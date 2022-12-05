@@ -14,7 +14,7 @@
           "lib/netcoreapp3.0/CalcBinding.dll": {}
         }
       },
-      "CommunityToolkit.Mvvm/8.0.0": {
+      "CommunityToolkit.Mvvm/8.1.0-preview1": {
         "type": "package",
         "compile": {
           "lib/net6.0/CommunityToolkit.Mvvm.dll": {}
@@ -858,6 +858,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "CommunityToolkit.Mvvm": "8.1.0-preview1",
           "FFME.Windows": "4.4.350",
           "Microsoft.Extensions.Hosting": "7.0.0"
         },
@@ -889,10 +890,10 @@
         "lib/netcoreapp3.0/CalcBinding.dll"
       ]
     },
-    "CommunityToolkit.Mvvm/8.0.0": {
-      "sha512": "Jiu2g5WUdXRwzhJkHB+B4JBKP5A5+fp8xKiW/ZQo5PI+DruI7MbPEcK9K/Aw0YzTiWRuG6CBluzYIWN5Eo7BkQ==",
+    "CommunityToolkit.Mvvm/8.1.0-preview1": {
+      "sha512": "b0L1XGSFmrorXFXn8gAynHx5GVmmUMZyJx1/9xWOO+Dn7VTZInl02ilLPTwwHqXHxttQI2oxx0UyFWfgXpMi8Q==",
       "type": "package",
-      "path": "communitytoolkit.mvvm/8.0.0",
+      "path": "communitytoolkit.mvvm/8.1.0-preview1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -900,11 +901,12 @@
         "License.md",
         "ThirdPartyNotices.txt",
         "analyzers/dotnet/roslyn4.0/cs/CommunityToolkit.Mvvm.SourceGenerators.dll",
+        "analyzers/dotnet/roslyn4.3/cs/CommunityToolkit.Mvvm.SourceGenerators.dll",
         "build/netstandard2.0/CommunityToolkit.Mvvm.targets",
         "build/netstandard2.1/CommunityToolkit.Mvvm.targets",
         "buildTransitive/netstandard2.0/CommunityToolkit.Mvvm.targets",
         "buildTransitive/netstandard2.1/CommunityToolkit.Mvvm.targets",
-        "communitytoolkit.mvvm.8.0.0.nupkg.sha512",
+        "communitytoolkit.mvvm.8.1.0-preview1.nupkg.sha512",
         "communitytoolkit.mvvm.nuspec",
         "lib/net6.0/CommunityToolkit.Mvvm.dll",
         "lib/net6.0/CommunityToolkit.Mvvm.pdb",
@@ -3132,7 +3134,7 @@
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "CalcBinding >= 2.5.2",
-      "CommunityToolkit.Mvvm >= 8.0.0",
+      "CommunityToolkit.Mvvm >= 8.1.0-preview1",
       "FestoManufacturingLine_ModBus.Domain >= 1.0.0",
       "MahApps.Metro >= 2.4.9",
       "MahApps.Metro.IconPacks >= 4.11.0",
@@ -3195,7 +3197,7 @@
           },
           "CommunityToolkit.Mvvm": {
             "target": "Package",
-            "version": "[8.0.0, )"
+            "version": "[8.1.0-preview1, )"
           },
           "MahApps.Metro": {
             "target": "Package",
