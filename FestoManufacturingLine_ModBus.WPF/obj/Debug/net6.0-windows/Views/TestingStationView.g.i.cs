@@ -63,7 +63,8 @@ namespace FestoManufacturingLine_ModBus.WPF.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FestoManufacturingLine_ModBus.WPF;component/views/testingstationview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FestoManufacturingLine_ModBus.WPF;V1.0.0.0;component/views/testingstationview.xa" +
+                    "ml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\TestingStationView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

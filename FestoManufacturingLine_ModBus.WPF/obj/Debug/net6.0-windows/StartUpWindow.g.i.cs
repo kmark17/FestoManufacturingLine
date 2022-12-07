@@ -55,7 +55,7 @@ namespace FestoManufacturingLine_ModBus.WPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FestoManufacturingLine_ModBus.WPF;component/startupwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FestoManufacturingLine_ModBus.WPF;V1.0.0.0;component/startupwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\StartUpWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -73,7 +73,8 @@ namespace FestoManufacturingLine_ModBus.WPF.Controls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FestoManufacturingLine_ModBus.WPF;component/controls/plcconfiguration.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FestoManufacturingLine_ModBus.WPF;V1.0.0.0;component/controls/plcconfiguration.x" +
+                    "aml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Controls\PlcConfiguration.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

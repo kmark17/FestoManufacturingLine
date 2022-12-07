@@ -48,17 +48,12 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
             return null;
         }
 
-        public void WriteValues()
+        public void WriteValues(ModbusClient modbusClient, int startingAddress, int[] writeValues)
         {
-            //if (modeBusClient.Connected)
-            //{
-            //    int[] writeValues = new int[]
-            //    {
-            //        //int.Parse(QW1TextBlock.Text),
-            //    };
-
-            //    modeBusClient.WriteMultipleRegisters(0, writeValues);
-            //}
+            if (modbusClient.Connected)
+            {
+                modbusClient.WriteMultipleRegisters(startingAddress, writeValues);
+            }
         }
 
         public ObservableCollection<ModBusInputVariable>? CreateInputVariables(IPlcConfigurationStore plcConfigurationStore)

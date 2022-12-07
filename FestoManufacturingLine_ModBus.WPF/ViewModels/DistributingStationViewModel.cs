@@ -21,7 +21,6 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
     {
         [ObservableProperty]
         private bool _isDistributingStationOnline;
-
         [ObservableProperty]
         private bool _isListening = false;
 
@@ -31,10 +30,13 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
         private ModbusClientViewModel ModbusClientViewModel { get; }
         private IDistributingStationStore DistributingStationStore { get; set; }
         private IOutputPathStore OutputPathStore { get; set; }
-        public ObservableCollection<ModBusInputVariable>? DistributingStationModBusInputVariables { get; } = new ObservableCollection<ModBusInputVariable>();
-        public ObservableCollection<ModBusOutputVariable>? DistributingStationModBusOutputVariables { get; } = new ObservableCollection<ModBusOutputVariable>();
+        public ObservableCollection<ModBusInputVariable>? DistributingStationModBusInputVariables { get; }
+            = new ObservableCollection<ModBusInputVariable>();
+        public ObservableCollection<ModBusOutputVariable>? DistributingStationModBusOutputVariables { get; }
+            = new ObservableCollection<ModBusOutputVariable>();
 
-        public DistributingStationViewModel(ModbusClientViewModel modbusClientViewModel, IDistributingStationStore distributingStationStore, IOutputPathStore outputPathStore)
+        public DistributingStationViewModel(ModbusClientViewModel modbusClientViewModel,
+            IDistributingStationStore distributingStationStore, IOutputPathStore outputPathStore)
         {
             ModbusClientViewModel = modbusClientViewModel;
             DistributingStationStore = distributingStationStore;
@@ -97,7 +99,8 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
         {
             try
             {
-                using (StreamWriter sw = new StreamWriter(OutputPathStore.FilePath! + DistributingStationStore.PlcConfiguration!.Name))
+                using (StreamWriter sw = new StreamWriter(
+                    OutputPathStore.FilePath! + DistributingStationStore.PlcConfiguration!.Name))
                 {
                     string? header = null;
 
@@ -136,17 +139,14 @@ namespace FestoManufacturingLine_ModBus.WPF.ViewModels
         {
             try
             {
-                if (DistributingStationModeBusClient!.Connected)
+                int[] writeValues = new int[DistributingStationModBusOutputVariables!.Count];
+
+                for (int i = 0; i < DistributingStationModBusOutputVariables!.Count; i++)
                 {
-                    int[] writeValues = new int[DistributingStationModBusOutputVariables!.Count];
-
-                    for (int i = 0; i < DistributingStationModBusOutputVariables!.Count; i++)
-                    {
-                        writeValues[i] = DistributingStationModBusOutputVariables[i].ValueToSend ?? 0;
-                    }
-
-                    DistributingStationModeBusClient.WriteMultipleRegisters(0, writeValues);
+                    writeValues[i] = DistributingStationModBusOutputVariables[i].ValueToSend ?? 0;
                 }
+
+                ModbusClientViewModel.WriteValues(DistributingStationModeBusClient!, 0, writeValues);
             }
             finally
             {
