@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RJN2xYtLZwzRjw3zeanG5gntVF9oqZu9XgIqOc4lzLIMLHR960jHWFbUnUQb5irqzsvfmTsDDr4dyI4mebO2Fg==",
+  "dgSpecHash": "dsunvwgu68t9HntztzDewnHmn8vAfNqwBI/8ptYxlI+KUuTVeq9UREBmytBX7KCTzo9oAZZW6lZaAD2KDvku1w==",
   "success": true,
-  "projectFilePath": "D:\\RENDSZER\\Dokumentumok\\Egyetemi JEGYZETEK\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\FestoManufacturingLine_ModBus.WPF.csproj",
+  "projectFilePath": "D:\\RENDSZER\\Dokumentumok\\Egyetem\\Proginf_msc\\3rd_semester\\DigitalFactoryLab\\FestoManufacturingLine_ModBus\\FestoManufacturingLine_ModBus.WPF\\FestoManufacturingLine_ModBus.WPF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\calcbinding\\2.5.2\\calcbinding.2.5.2.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\communitytoolkit.mvvm\\8.1.0-preview1\\communitytoolkit.mvvm.8.1.0-preview1.nupkg.sha512",
